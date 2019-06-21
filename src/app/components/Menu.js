@@ -1,16 +1,16 @@
 import React, { Component } from "react";
+import {Link} from 'react-router';
 
 export default class Menu extends Component {
     render() {
-        console.log(this.props.data);
-         let itemsRender = [];
-         for (let i = 0; i < this.props.data.length; i++) {
-
-             itemsRender.push(<li key={i}><a href={this.props.data[i].href}>{this.props.data[i].name}</a></li>);
-         }
-
-         return (<ul className='menu'>
-             {itemsRender}
-         </ul>);
+        console.log(this.props.children);
+        return (
+            <div className="header">
+                <Link to="/" className="logo header__logo">{this.props.brand}</Link>
+                <ul className='menu'>
+                    {this.props.children}
+                </ul>
+            </div>
+        );
     }
 }
