@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 import Menu from '../components/Menu';
 import MenuItem from '../components/MenuItem';
 import Footer from "../components/Footer";
@@ -15,6 +15,7 @@ export default class Layout extends Component {
     }
 
     render() {
+        console.log(this.props.children);
         return (
             <div className="container">
                 <Menu brand={this.brand}>

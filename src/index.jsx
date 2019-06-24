@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {Router, Route, IndexRoute, browserHistory} from "react-router";
+import {Router, Route} from "react-router";
+import {BrowserRouter} from "react-router-dom";
 
 import Layout from './app/layouts/Layout';
 import PageNotFound from "./app/pages/PageNotFound";
@@ -17,15 +18,15 @@ import store from './app/stores/store';
 
 ReactDOM.render(
     <Provider store={store}>
-        <Router history={browserHistory}>
+        <BrowserRouter>
             <Route path="/" component={Layout}>
-                <IndexRoute component={Main} />
+                <Route exact path="/" component={Main} />
                 <Route path="lifestyle" component={Lifestyle} />
                 <Route path="photodiary" component={Photodiary} />
                 <Route path="music" component={Music} />
                 <Route path="travel" component={Travel} />
-                <Route path="*" component={PageNotFound} />
+                <Route component={PageNotFound} />
             </Route>
-        </Router>
+        </BrowserRouter>
     </Provider>,
     document.getElementById('app'));
