@@ -1,14 +1,15 @@
 import React, { Component } from "react";
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 export default class MenuItem extends Component {
     render() {
         return (
-            <li className={this.props.active ? 'active' : ''}>
-                <Link to={this.props.href}>
+            <li>
+                <NavLink exact to={this.props.href} activeClassName="active">
                     {this.props.children}
-                </Link>
+                </NavLink>
             </li>
         );
     }
 }
+/*className={this.props.active ? 'active' : ''} - было для элемента li*/
