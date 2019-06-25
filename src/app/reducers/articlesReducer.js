@@ -1,4 +1,4 @@
-import * as Articles from '../constants/articles';
+/*import * as Articles from '../constants/articles';
 
 export function articlesReducer(state = {articles: [], is_fetching: false}, action) {
     console.log('!!!ACTION', action);
@@ -21,4 +21,4 @@ export function articlesReducer(state = {articles: [], is_fetching: false}, acti
     }
 
     return state;
-}
+}*/

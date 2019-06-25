@@ -1,4 +1,4 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+/*import { createStore, combineReducers, applyMiddleware } from 'redux';
 
 import { articlesReducer } from '../reducers/articlesReducer';
 
@@ -16,4 +16,4 @@ const reducers = combineReducers({
 
 const store = createStore(reducers, middleware);
 
-export default store;
+export default store;*/
