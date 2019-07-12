@@ -1,7 +1,7 @@
-/*import * as Articles from '../constants/articles';
+import * as Articles from '../constants/articles';
 
 export function articlesReducer(state = {articles: [], is_fetching: false}, action) {
-    console.log('!!!ACTION', action);
+    console.log('!!!ACTION', action, action.payload);
     switch (action.type)
     {
         case Articles.FETCH_ARTICLES_PENDING: {
@@ -18,7 +18,9 @@ export function articlesReducer(state = {articles: [], is_fetching: false}, acti
             state = {...state, is_fetching: false, error_message: action.payload.message};
             break;
         }
+        default:
+            return state;
     }
 
-    return state;
-}*/
+    //return state;
+}

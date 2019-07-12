@@ -1,8 +1,10 @@
-/*import data from '../data/articles'
+//import articles from '../data/articlesData';
 
-export function fetchArticles() {
+//import axios from 'axios';
+
+export function fetchArticles(articles) {
     return {
         type: 'FETCH_ARTICLES',
-        payload: data
+        articles
     }
-}*/
+}
