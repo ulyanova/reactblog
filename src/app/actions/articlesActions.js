@@ -1,6 +1,8 @@
-export function fetchArticles(articles) {
+import axios from 'axios';
+
+export function fetchArticles() {
     return {
         type: 'FETCH_ARTICLES',
-        payload: articles
+        payload: axios.get('http://jsonplaceholder.typicode.com/posts/')
     }
 }

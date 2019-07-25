@@ -3,7 +3,7 @@ import ArticleList from '../components/ArticleList';
 
 import { connect } from 'react-redux';
 import { fetchArticles } from '../actions/articlesActions';
-import articles from '../data/articlesData';
+//import articles from '../data/articlesData';
 
 @connect((store) => {
     return {
@@ -17,7 +17,7 @@ export default class Main extends React.Component
     constructor(props)
     {
         super(props);
-        let toDispatch = fetchArticles(articles);
+        let toDispatch = fetchArticles();
         this.props.dispatch(toDispatch);
     }
 
