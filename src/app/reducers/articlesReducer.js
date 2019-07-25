@@ -18,9 +18,7 @@ export function articlesReducer(state = {articles: [], is_fetching: false}, acti
             state = {...state, is_fetching: false, error_message: action.payload.message};
             break;
         }
-        default:
-            return state;
     }
 
-    //return state;
+    return state;
 }

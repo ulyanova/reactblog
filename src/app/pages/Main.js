@@ -2,8 +2,7 @@ import React from 'react';
 import ArticleList from '../components/ArticleList';
 
 import { connect } from 'react-redux';
-import { fetchArticles } from "../actions/articlesActions";
-
+import { fetchArticles } from '../actions/articlesActions';
 import articles from '../data/articlesData';
 
 @connect((store) => {
@@ -19,14 +18,23 @@ export default class Main extends React.Component
     {
         super(props);
         let toDispatch = fetchArticles(articles);
-        this.props.dispatch(toDispatch)
+        this.props.dispatch(toDispatch);
     }
 
     render()
     {
         return (
             <>
-                <ArticleList />
+                {
+                    (!this.props.children) ?
+                        (
+                            this.props.is_fetching ?
+                                'Pending...' :
+                                (<ArticleList />)
+                        )
+                        :
+                        (this.props.children)
+                }
             </>
         );
     }
