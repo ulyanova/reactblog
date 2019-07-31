@@ -16,7 +16,7 @@ export default class ArticleList extends Component {
 
         //Получение пользователей
         axios
-            .get('https://jsonplaceholder.typicode.com/posts')
+            .get('http://localhost:8082/api/posts')
             .then((response) => {
                 if(this._isMounted) {
                     let { data } = response;
