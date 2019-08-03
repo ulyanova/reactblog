@@ -5,7 +5,7 @@ import MenuItem from './MenuItem';
 export default class Header extends Component {
     constructor() {
         super(...arguments);
-        this.brand = 'minimo';
+        this.brand = 'minimø';
     }
 
     isActive(href) {

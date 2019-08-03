@@ -4,8 +4,8 @@ import {NavLink} from 'react-router-dom';
 export default class MenuItem extends Component {
     render() {
         return (
-            <li>
-                <NavLink exact to={this.props.href} activeClassName="active">
+            <li className="menu__li">
+                <NavLink exact to={this.props.href} activeClassName="active" className="menu__a">
                     {this.props.children}
                 </NavLink>
             </li>
