@@ -7,11 +7,11 @@ import Footer from "../components/Footer";
 export default class Layout extends Component {
     render() {
         return (
-            <div className="container">
+            <>
                 <Header />
                 <Content />
                 <Footer />
-            </div>
+            </>
         );
     }
 }

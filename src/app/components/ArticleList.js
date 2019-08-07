@@ -46,7 +46,7 @@ export default class ArticleList extends Component {
         });
 
         return (
-            <div className="articles">
+            <div className="articles container">
                 {articles}
             </div>
         );
