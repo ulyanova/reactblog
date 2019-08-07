@@ -1,8 +1,10 @@
 import React from 'react';
 import ArticleList from '../components/ArticleList';
+import Newsletter from "../components/Newsletter";
 
 import { connect } from 'react-redux';
 import { fetchArticles } from '../actions/articlesActions';
+
 //import articles from '../data/articlesData';
 
 @connect((store) => {
@@ -30,11 +32,14 @@ export default class Main extends React.Component
                         (
                             this.props.is_fetching ?
                                 'Pending...' :
-                                (<ArticleList />)
+                                (
+                                    <ArticleList />
+                                )
                         )
                         :
                         (this.props.children)
                 }
+                <Newsletter />
             </>
         );
     }

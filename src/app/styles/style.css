@@ -2,13 +2,17 @@
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Inconsolata&display=swap");
+html, body {
+  min-width: 100%;
+}
+
 a {
   text-decoration: none;
 }
 
 .container {
-  padding: 68px 70px;
   max-width: 1200px;
+  padding: 68px 70px;
   margin: 0 auto;
 }
 
@@ -129,4 +133,43 @@ a {
 }
 .article:first-child a {
   display: block;
+}
+
+.newsletter {
+  background-color: #f0f0f0;
+}
+.newsletter__h3 {
+  color: #333;
+  font-family: Playfair Display;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 0.75px;
+  margin-bottom: 70px;
+}
+.newsletter__form {
+  width: 37.736%;
+  margin: 0 auto;
+  padding: 73px 0;
+}
+.newsletter__input {
+  border-bottom: 1px solid #000;
+  padding: 10px 0;
+}
+.newsletter__input input {
+  color: #626262;
+  font-family: Playfair Display;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
+  width: calc(100% - 32px);
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+.newsletter__input a {
+  width: 32px;
+  height: 17px;
+  float: right;
+  background-image: url("../../img/send-icon.png");
 }
