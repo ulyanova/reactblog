@@ -14,7 +14,7 @@ import { fetchArticles } from '../actions/articlesActions';
     }
 })
 
-export default class Main extends React.Component
+export default class Page extends React.Component
 {
     constructor(props)
     {

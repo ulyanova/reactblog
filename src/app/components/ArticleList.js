@@ -41,9 +41,42 @@ export default class ArticleList extends Component {
             return null;
         }
 
-        let articles = this.state.articles.map((article, index) => {
-            return <Article key={index} {...article} />;
-        });
+        console.log(window.location.pathname);
+
+        switch (window.location.pathname) {
+            case '/lifestyle':
+                var data = this.state.articles.filter(article => article.type == "lifestyle");
+                var articles = data.map((article, index) => {
+                    return <Article key={index} {...article} />;
+                });
+                break;
+
+            case '/photodiary':
+                var data = this.state.articles.filter(article => article.type == "photodiary");
+                var articles = data.map((article, index) => {
+                    return <Article key={index} {...article} />;
+                });
+                break;
+
+            case '/music':
+                var data = this.state.articles.filter(article => article.type == "music");
+                var articles = data.map((article, index) => {
+                    return <Article key={index} {...article} />;
+                });
+                break;
+
+            case '/travel':
+                var data = this.state.articles.filter(article => article.type == "travel");
+                var articles = data.map((article, index) => {
+                    return <Article key={index} {...article} />;
+                });
+                break;
+
+            default:
+                var articles = this.state.articles.map((article, index) => {
+                    return <Article key={index} {...article} />;
+                });
+        }
 
         return (
             <div className="articles container">
