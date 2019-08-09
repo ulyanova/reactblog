@@ -48,6 +48,7 @@ export default class ArticleList extends Component {
         return (
             <div className="articles container">
                 {articles}
+                <a href="#" className="articles__button">Load more</a>
             </div>
         );
     }

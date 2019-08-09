@@ -52,6 +52,15 @@ a
 .articles
   display: flex
   flex-wrap: wrap
+  &__button
+    color: #626262
+    font-family: Playfair Display
+    font-size: 20px
+    font-weight: 400
+    padding: 20px 34px
+    border: 1px solid #626262
+    display: block
+    margin: 0 auto 60px
 
 .article
   width: 50%
@@ -132,14 +141,39 @@ a
       font-size: 14px
       line-height: 17px
       font-weight: 400
-      width: calc(100% - 32px)
+      width: calc(100% - 15px)
       background-color: transparent
       border: none
       outline: none
       padding: 0
     a
-      width: 32px
-      height: 17px
+      font-size: 14px
+      color: #626262
       float: right
-      background-image: url("../../img/send-icon.png")
+      padding-top: 3px
+
+.footer
+  &__div
+    padding: 40px 70px 45px 150px
+  &-links
+    float: left
+  &-social
+    float: right
+  &__a
+    margin-right: 20px
+    float: left
+    color: #000
+    font-family: Playfair Display
+    font-size: 14px
+    font-weight: 400
+    line-height: 24px
+
+.social__a
+  font-size: 14px
+  color: #626262
+  margin-right: 15px
+  &:last-child
+    margin-right: 0
+
+
 

@@ -9,7 +9,7 @@ export default class Newsletter extends Component {
                         <h3 className="newsletter__h3">Sign up for our newsletter!</h3>
                         <div className="newsletter__input">
                             <input type="text" placeholder="Enter a valid email address"/>
-                            <a href="#"></a>
+                            <a href="#"><i className="icon-right-open"></i></a>
                         </div>
                     </div>
                 </div>

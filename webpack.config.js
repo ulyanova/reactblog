@@ -58,6 +58,10 @@ module.exports = {
             {
                 from: './src/img',
                 to: './img'
+            },
+            {
+                from: './src/fontello',
+                to: './fontello'
             }
         ])
     ]
