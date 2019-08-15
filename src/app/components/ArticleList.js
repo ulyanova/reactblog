@@ -78,10 +78,12 @@ export default class ArticleList extends Component {
                 });
         }
 
+        console.log(articles.length);
+
         return (
             <div className="articles container">
                 {articles}
-                <a href="#" className="articles__button">Load more</a>
+                <a href="#" className={(articles.length>6) ? "articles__button" + " active" : "articles__button"}>Load more</a>
             </div>
         );
     }
