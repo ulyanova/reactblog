@@ -26,6 +26,10 @@ a {
   display: block !important;
 }
 
+.center {
+  text-align: center;
+}
+
 .logo {
   color: #000;
   font-family: Inconsolata;
@@ -36,9 +40,6 @@ a {
   letter-spacing: 6px;
 }
 
-.header {
-  margin-bottom: 72px;
-}
 .header__logo {
   float: left;
 }
@@ -83,7 +84,8 @@ a {
   padding: 0 30px 130px;
 }
 .article__img {
-  width: 100%;
+  height: 280px;
+  object-fit: cover;
   margin-bottom: 32px;
 }
 .article-type__p {
@@ -136,7 +138,7 @@ a {
   padding: 0 0 130px;
 }
 .article:first-child img {
-  width: 100%;
+  height: 509px;
   margin-bottom: 100px;
 }
 .article:first-child h3, .article:first-child h5, .article:first-child p, .article:first-child a {
