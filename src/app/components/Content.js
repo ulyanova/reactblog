@@ -13,10 +13,10 @@ export default class Layout extends Component {
             <div className="content">
                 <Switch>
                     <Route exact path="/" component={Page} />
-                    <Route path="/lifestyle" component={Page} />
-                    <Route path="/photodiary" component={Page} />
-                    <Route path="/music" component={Page} />
-                    <Route path="/travel" component={Page} />
+                    <Route path="/lifestyle" component={Lifestyle} />
+                    <Route path="/photodiary" component={Photodiary} />
+                    <Route path="/music" component={Music} />
+                    <Route path="/travel" component={Travel} />
                 </Switch>
             </div>
         );
