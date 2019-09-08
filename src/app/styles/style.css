@@ -14,6 +14,7 @@ a {
   max-width: 1200px;
   padding: 68px 70px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .clearfix:after {
@@ -23,7 +24,7 @@ a {
 }
 
 .active {
-  display: block !important;
+  display: inline-block !important;
 }
 
 .center {
@@ -67,6 +68,7 @@ a {
 .articles {
   display: flex;
   flex-wrap: wrap;
+  text-align: left;
 }
 .articles__button {
   color: #626262;
