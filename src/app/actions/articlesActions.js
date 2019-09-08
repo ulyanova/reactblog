@@ -1,8 +1,15 @@
 import axios from 'axios';
 
-export function fetchArticles() {
+export function fetchArticles(type) {
     return {
         type: 'FETCH_ARTICLES',
-        payload: axios.get('http://localhost:8082/api/posts')
+        payload: axios.get('http://localhost:8082/api/posts/' + type)
+    }
+}
+
+export function loadMore(type) {
+    return {
+        type: 'LOAD_MORE',
+        payload: axios.get('http://localhost:8082/api/posts' + type)
     }
 }
