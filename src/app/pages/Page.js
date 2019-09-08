@@ -5,22 +5,20 @@ import Newsletter from "../components/Newsletter";
 import { connect } from 'react-redux';
 import { fetchArticles } from '../actions/articlesActions';
 
-//import articles from '../data/articlesData';
-
 @connect((store) => {
     return {
         articles: store.articles.articles,
-        is_fetching: store.articles.is_fetching
+        is_fetching: store.articles.is_fetching,
+        loadButton: store.articles.loadButton
     }
 })
 
-export default class Main extends React.Component
+export default class Page extends React.Component
 {
     constructor(props)
     {
         super(props);
-        let toDispatch = fetchArticles();
-        this.props.dispatch(toDispatch);
+        this.props.dispatch(fetchArticles(''));
     }
 
     render()

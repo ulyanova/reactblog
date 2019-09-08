@@ -13,11 +13,18 @@ a
   max-width: 1200px
   padding: 68px 70px
   margin: 0 auto
+  text-align: center
 
 .clearfix:after
   content: " "
   display: block
   clear: both
+
+.active
+  display: inline-block !important
+
+.center
+  text-align: center
 
 .logo
   color: #000
@@ -29,7 +36,7 @@ a
   letter-spacing: 6px
 
 .header
-  margin-bottom: 72px
+  //margin-bottom: 72px
   &__logo
     float: left
 
@@ -52,6 +59,7 @@ a
 .articles
   display: flex
   flex-wrap: wrap
+  text-align: left
   &__button
     color: #626262
     font-family: Playfair Display
@@ -59,14 +67,16 @@ a
     font-weight: 400
     padding: 20px 34px
     border: 1px solid #626262
-    display: block
+    display: none
     margin: 0 auto 60px
 
 .article
   width: 50%
   padding: 0 30px 130px
   &__img
-    width: 100%
+    //width: 100%
+    height: 280px
+    object-fit: cover
     margin-bottom: 32px
   &-type__p
     margin-bottom: 28px
@@ -110,7 +120,8 @@ a
   width: 100%
   padding: 0 0 130px
   img
-    width: 100%
+    //width: 100%
+    height: 509px
     margin-bottom: 100px
   h3,h5,p,a
     padding: 0 80px
