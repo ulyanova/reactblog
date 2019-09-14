@@ -54,6 +54,19 @@ export function articlesReducer(state = {articles: [], is_fetching: false, loadB
             state = {...state, is_fetching: false, error_message: action.payload.message};
             break;
         }
+
+        case Articles.FETCH_POST_PENDING: {
+            state = {...state, is_fetching: true};
+            break;
+        }
+        case Articles.FETCH_POST_FULFILLED: {
+            state = {...state, is_fetching: false, articles: action.payload.data};
+            break;
+        }
+        case Articles.FETCH_POST_REJECTED: {
+            state = {...state, is_fetching: false, error_message: action.payload.message};
+            break;
+        }
     }
 
     return state;

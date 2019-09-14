@@ -13,3 +13,10 @@ export function loadMore(type) {
         payload: axios.get('http://localhost:8082/api/posts' + type)
     }
 }
+
+export function fetchPost(id) {
+    return {
+        type: 'FETCH_POST',
+        payload: axios.get('http://localhost:8082/api/posts/post/' + id)
+    }
+}

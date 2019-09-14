@@ -6,6 +6,7 @@ import Photodiary from "../pages/Photodiary";
 import Page from "../pages/Page";
 import Travel from "../pages/Travel";
 import Music from "../pages/Music";
+import ArticleFullPage from "../pages/ArticleFullPage";
 
 export default class Layout extends Component {
     render() {
@@ -17,6 +18,7 @@ export default class Layout extends Component {
                     <Route path="/photodiary" component={Photodiary} />
                     <Route path="/music" component={Music} />
                     <Route path="/travel" component={Travel} />
+                    <Route path="/post/:id" component={ArticleFullPage} />
                 </Switch>
             </div>
         );

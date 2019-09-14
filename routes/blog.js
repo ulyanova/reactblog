@@ -54,4 +54,15 @@ router.get('/travel', function (req, res, next) {
     })
 });
 
+router.get('/post/:id', function (req, res, next) {
+    Blog.find({id: req.params.id}, function (err, blog) {
+        if(err){
+            return next(err);
+        }
+
+        res.json(blog);
+    })
+});
+
 module.exports = router;
+
