@@ -1,12 +1,15 @@
 let mongoose = require('mongoose');
 
-var postSchema = new mongoose.Schema({
+const postSchema = new mongoose.Schema({
     userId: String,
     id: String,
-    img: Array,
+    img: String,
     type: String,
     title: String,
-    body: Array
+    body: Array,
+    images: Array,
+    bodyItalic: Array,
+    bodyFull: Array
 });
 
 mongoose.model('Blog', postSchema, 'posts');
