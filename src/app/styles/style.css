@@ -8,7 +8,6 @@ html, body {
 
 .container {
   max-width: 1200px;
-  padding: 68px 70px;
   margin: 0 auto;
   text-align: center;
   font-family: Playfair Display;
@@ -41,6 +40,9 @@ a {
   letter-spacing: 6px;
 }
 
+.header {
+  padding: 68px 70px;
+}
 .header__logo {
   float: left;
 }
@@ -67,9 +69,6 @@ a {
   width: 100%;
   margin-bottom: 55px;
 }
-.article__img:first-of-type {
-  margin-bottom: 100px;
-}
 .article__img:nth-of-type(2) {
   margin-top: 31px;
 }
@@ -84,11 +83,15 @@ a {
   font-size: 30px;
   margin-bottom: 34px;
 }
-.article__h::first-letter {
+.article__h:first-letter {
   text-transform: uppercase;
 }
 .article__p {
   margin-bottom: 24px;
+}
+.article__p_italic {
+  font-style: italic;
+  margin-left: 20px;
 }
 .article__a {
   margin: 50px 80px 0;
@@ -100,9 +103,6 @@ a {
 }
 .article img, .article h3, .article h5, .article p {
   padding: 0 80px;
-}
-.article img:first-of-type {
-  padding: 0;
 }
 
 .articles {
@@ -122,9 +122,6 @@ a {
 }
 .articles .article__img {
   margin-bottom: 32px;
-}
-.articles .article:first-child img {
-  margin-bottom: 100px;
 }
 .articles .article:nth-of-type(2) img {
   margin-top: 0;
@@ -153,13 +150,75 @@ a {
   padding-left: 80px;
   padding-right: 80px;
 }
-.articles .article:first-child img:first-of-type {
-  padding: 0;
-}
 .articles .article:first-child .article__p {
-  height: calc(24px * 8);
+  height: calc(24px * 7);
 }
 .articles .article:first-child a {
+  display: inline-block;
+}
+
+.article:first-child img:first-of-type {
+  margin-bottom: 100px;
+  padding: 0;
+}
+
+.share {
+  float: right;
+  margin: 41px 80px 76px;
+}
+.share__p {
+  color: #b4ad9e;
+  font-family: Ubuntu;
+  font-size: 13px;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-right: 23px;
+  float: left;
+}
+.share__a {
+  float: left;
+  font-size: 17px;
+  color: #b4ad9e;
+  margin-right: 12px;
+}
+.share__a:last-child {
+  margin-right: 0;
+}
+
+.you-may-also-like {
+  background-color: #f2f2f2;
+  opacity: 0.8;
+  padding: 69px 0 89px;
+}
+.you-may-also-like .article-type__p {
+  padding: 0 80px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.articles-preview {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 0 80px;
+}
+.articles-preview__figure {
+  width: 100%/3;
+  padding: 0 20px;
+  text-align: left;
+}
+.articles-preview__figure:first-of-type {
+  padding-left: 0;
+}
+.articles-preview__figure:last-of-type {
+  padding-right: 0;
+}
+.articles-preview__figure img {
+  margin-bottom: 24px;
+}
+.articles-preview__figure .article__h {
+  font-size: 20px;
+  margin-bottom: 0;
   display: inline-block;
 }
 

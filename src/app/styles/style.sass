@@ -8,7 +8,6 @@ html, body
 
 .container
   max-width: 1200px
-  padding: 68px 70px
   margin: 0 auto
   text-align: center
   font-family: Playfair Display
@@ -36,7 +35,9 @@ a
   text-transform: uppercase
   letter-spacing: 6px
 
-.header__logo
+.header
+  padding: 68px 70px
+  &__logo
     float: left
 
 .menu
@@ -55,8 +56,6 @@ a
   &__img
     width: 100%
     margin-bottom: 55px
-    &:first-of-type
-      margin-bottom: 100px
     &:nth-of-type(2)
       margin-top: 31px
   &-type__p
@@ -68,10 +67,13 @@ a
   &__h
     font-size: 30px
     margin-bottom: 34px
-  &__h::first-letter
+  &__h:first-letter
     text-transform: uppercase
   &__p
     margin-bottom: 24px
+    &_italic
+      font-style: italic
+      margin-left: 20px
   &__a
     margin: 50px 80px 0
     color: #b4ad9e
@@ -81,8 +83,6 @@ a
     display: none
   img,h3,h5,p
     padding: 0 80px
-  img:first-of-type
-    padding: 0
 
 .articles
   display: flex
@@ -98,9 +98,6 @@ a
     padding: 0 0 130px
     &__img
       margin-bottom: 32px
-    &:first-child
-      img
-        margin-bottom: 100px
     &:nth-of-type(2)
       img
         margin-top: 0
@@ -124,12 +121,64 @@ a
       img,h3,h5,p
         padding-left: 80px
         padding-right: 80px
-      img:first-of-type
-        padding: 0
       .article__p
-        height: calc(24px * 8)
+        height: calc(24px * 7)
       a
         display: inline-block
+
+.article:first-child
+  img:first-of-type
+    margin-bottom: 100px
+    padding: 0
+
+.share
+  float: right
+  margin: 41px 80px 76px
+  &__p
+    color: #b4ad9e
+    font-family: Ubuntu
+    font-size: 13px
+    font-weight: 300
+    text-transform: uppercase
+    margin-right: 23px
+    float: left
+  &__a
+    float: left
+    font-size: 17px
+    color: #b4ad9e
+    margin-right: 12px
+    &:last-child
+      margin-right: 0
+
+.you-may-also-like
+  background-color: #f2f2f2
+  opacity: 0.8
+  padding: 69px 0 89px
+  .article-type__p
+    padding: 0 80px
+    margin-bottom: 40px
+    text-align: left
+
+.articles-preview
+  display: flex
+  flex-wrap: nowrap
+  justify-content: space-between
+  padding: 0 80px
+  &__figure
+    width: 100%/3
+    padding: 0 20px
+    text-align: left
+    &:first-of-type
+      padding-left: 0
+    &:last-of-type
+      padding-right: 0
+    img
+      margin-bottom: 24px
+    .article__h
+      font-size: 20px
+      margin-bottom: 0
+      display: inline-block
+
 
 .newsletter
   background-color: #f0f0f0
