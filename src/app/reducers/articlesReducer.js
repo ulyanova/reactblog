@@ -1,7 +1,6 @@
 import * as Articles from '../constants/articles';
 
-export function articlesReducer(state = {articles: [], is_fetching: false, loadButton: false, articlesLike: []}, action) {
-    //console.log('!!!ACTION', action, action.payload);
+export function articlesReducer(state = {articles: [], is_fetching: false, loadButton: false, articlesLike: [], is_articlesLike_fetching: false}, action) {
     switch (action.type)
     {
         case Articles.FETCH_ARTICLES_PENDING: {
@@ -69,7 +68,7 @@ export function articlesReducer(state = {articles: [], is_fetching: false, loadB
         }
 
         case Articles.FETCH_ARTICLES_LIKE_PENDING: {
-            state = {...state, is_fetching: true};
+            state = {...state, is_articlesLike_fetching: true};
             break;
         }
 
@@ -96,12 +95,12 @@ export function articlesReducer(state = {articles: [], is_fetching: false, loadB
                 items = items.concat(elem);
             }
 
-            state = {...state, is_fetching: false, articlesLike: items};
+            state = {...state, is_articlesLike_fetching: false, articlesLike: items};
             break;
         }
 
         case Articles.FETCH_ARTICLES_LIKE_REJECTED: {
-            state = {...state, is_fetching: false, error_message: action.payload.message};
+            state = {...state, is_articlesLike_fetching: false, error_message: action.payload.message};
             break;
         }
     }
