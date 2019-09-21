@@ -3,8 +3,12 @@ let express = require('express');
 let logger = require('morgan');
 
 require('./models/blog');
+require('./models/comment');
+require('./models/user');
 
 let routeBlog = require('./routes/blog');
+let routeComment = require('./routes/comment');
+let routeUser = require('./routes/user');
 
 mongoose.connect('mongodb://localhost:27017/reactBlog');
 
@@ -23,6 +27,8 @@ app.use(logger('combined'));
 
 //Маршруты
 app.use('/api/posts', routeBlog);
+app.use('/api/comments', routeComment);
+app.use('/api/users', routeUser);
 
 app.use(function (req, res, next) {
     let err = new Error('Page Not Found!');
