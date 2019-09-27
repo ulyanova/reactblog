@@ -1,6 +1,6 @@
 import * as Users from '../constants/users';
 
-export function usersReducer(state = {users: [], is_fetching: false}, action) {
+export function usersReducer(state = {users: [], is_fetching: false, auth_user: [], authorization: false}, action) {
     switch (action.type)
     {
         case Users.FETCH_USERS_PENDING: {
@@ -15,6 +15,18 @@ export function usersReducer(state = {users: [], is_fetching: false}, action) {
 
         case Users.FETCH_USERS_REJECTED: {
             state = {...state, is_fetching: false, error_message: action.payload.message};
+            break;
+        }
+
+        case Users.ADD_USER: {
+            let users = [...state.users];
+            users.push(action.payload);
+            state = {...state, users: users};
+            break;
+        }
+
+        case Users.AUTHORISE_USER: {
+            state = {...state, auth_user: action.payload, authorization: true};
             break;
         }
     }

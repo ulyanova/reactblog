@@ -6,3 +6,17 @@ export function fetchUsers() {
         payload: axios.get('http://localhost:8082/api/users')
     }
 }
+
+export function addUser(user) {
+    return {
+        type: 'ADD_USER',
+        payload: user
+    }
+}
+
+export function authoriseUser(user) {
+    return {
+        type: 'AUTHORISE_USER',
+        payload: user
+    }
+}
