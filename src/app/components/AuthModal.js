@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import Modal from 'react-modal';
+import {authoriseUser} from "../actions/usersActions";
+import { connect } from 'react-redux';
 
 const customStyles = {
     content : {
@@ -15,17 +17,30 @@ const customStyles = {
 
 Modal.setAppElement('#app')
 
+@connect((store) => {
+    return {
+        users: store.users.users,
+        auth_user: store.users.auth_user,
+        authorization: store.users.authorization
+    }
+})
+
 export default class AuthModal extends Component {
     constructor() {
         super();
 
         this.state = {
-            modalIsOpen: false
+            modalIsOpen: false,
+            username: '',
+            userpassword: ''
         };
 
         this.openModal = this.openModal.bind(this);
         this.afterOpenModal = this.afterOpenModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
+        this.login = this.login.bind(this);
+        this.handleChangeName = this.handleChangeName.bind(this);
+        this.handleChangePassword = this.handleChangePassword.bind(this);
     }
 
     openModal() {
@@ -38,6 +53,23 @@ export default class AuthModal extends Component {
 
     closeModal() {
         this.setState({modalIsOpen: false});
+    }
+
+    handleChangeName(event) {
+        this.setState({username: event.target.value});
+    }
+
+    handleChangePassword(event) {
+        this.setState({userpassword: event.target.value});
+    }
+
+    login() {
+        console.log(this.props.users, this.state.username, this.state.userpassword);
+        let user = this.props.users.find(item => item.name == this.state.username);
+        user && (user.userpassword === this.state.userpassword &&
+                this.props.dispatch(authoriseUser(user)));
+
+        (!this.auth_user) && this.closeModal();
     }
 
     render()
@@ -67,17 +99,18 @@ export default class AuthModal extends Component {
                             <form>
                                 <div className="form-group">
                                     <label htmlFor="name">name:</label>
-                                    <input id="name" type="text" className="modal__input" />
+                                    <input id="name" type="text" className="modal__input" value={this.state.username} onChange={this.handleChangeName} />
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="password">password:</label>
-                                    <input id="password" type="text" className="modal__input" />
+                                    <input id="password" type="text" className="modal__input" value={this.state.userpassword} onChange={this.handleChangePassword} />
                                 </div>
                             </form>
                         </div>
                         <div className="modal-footer">
                             <a href="#" className="modal-footer__a login" onClick={(event) => {
                                 event.preventDefault();
+                                this.login()
                             }}>Login</a>
                             <a href="#" className="modal-footer__a create-account" onClick={(event) => {
                                 event.preventDefault();
@@ -89,43 +122,3 @@ export default class AuthModal extends Component {
         );
     }
 }
-
-/*<button className="articles__button active" onClick={this.openModal}>leave a comment</button>*/
-
-/*
-* <h2 ref={subtitle => this.subtitle = subtitle}>Login</h2>
-                    <button onClick={this.closeModal}>close</button>
-                    <form>
-                        <label htmlFor="name">name:</label>
-                        <input id="name" type="text" className="modal__input" />
-                        <label htmlFor="password">password:</label>
-                        <input id="password" type="text" className="modal__input" />
-                        <button>login</button>
-                        <a href="#" className="articles__button active" onClick={(event) => {
-                            event.preventDefault();
-
-                        }}>Create an account</a>
-                    </form>
-* */
-
-
-
-/*<div className="modal">
-                <p className="modal__header">Join the discussion</p>
-                <form className="modal-body">
-                    <label htmlFor="name">name:</label>
-                    <input id="name" type="text" className="modal__input" />
-                    <label htmlFor="password">password:</label>
-                    <input id="password" type="text" className="modal__input" />
-                </form>
-                <div className="modal__footer">
-                    <a href="#" className="articles__button" onClick={(event) => {
-                        event.preventDefault();
-
-                    }}>login</a>
-                    <a href="#" className="articles__button" onClick={(event) => {
-                        event.preventDefault();
-
-                    }}>register</a>
-                </div>
-            </div>*/
