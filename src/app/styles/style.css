@@ -114,6 +114,7 @@ a {
   padding: 20px 34px;
   border: 1px solid #626262;
   display: none;
+  border: none;
   margin: 0 auto 60px;
 }
 .articles .article {
@@ -253,6 +254,165 @@ a {
 .newsletter__input a {
   float: right;
   padding-top: 3px;
+}
+
+.comments {
+  padding: 67px 80px 96px;
+  text-align: left;
+}
+
+.comment {
+  padding-bottom: 57px;
+}
+.comment-userimg {
+  float: left;
+  margin-right: 36px;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  background-color: #cae5e0;
+  border-radius: 50%;
+}
+.comment-userimg_passive {
+  background-color: #ededea;
+}
+.comment-userimg__p {
+  color: #ffffff;
+  font-family: Ubuntu;
+  font-size: 34px;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: center;
+}
+.comment-block {
+  overflow: hidden;
+}
+.comment-username__p {
+  font-weight: 700;
+}
+.comment__p {
+  margin-bottom: 12px;
+}
+.comment__a {
+  color: #b4ad9e;
+  font-family: Ubuntu;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-right: 20px;
+}
+.comment__textarea {
+  padding: 28px 34px;
+  border-radius: 5px;
+  border: 1px solid #c8c8c8;
+  width: 100%;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+  line-height: inherit;
+  color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  margin-bottom: 38px;
+}
+.comment__textarea::placeholder {
+  color: #c8c8c8;
+  font-family: Ubuntu;
+  font-weight: 300;
+}
+
+.hidden-div {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: Ubuntu;
+  font-weight: 300;
+  padding: 28px 34px;
+  border-radius: 5px;
+  border: 1px solid #c8c8c8;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.modal-content {
+  font-family: Playfair Display;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  color: #626262;
+}
+
+.modal__a {
+  margin: 0;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0 2rem;
+  border-bottom: 1px solid #ccc;
+}
+.modal-header__h2 {
+  font-size: 1.25rem;
+}
+.modal-header__a {
+  font-size: 1.25rem;
+  font-family: Ubuntu;
+  font-weight: 700;
+  float: right;
+}
+
+.form-group {
+  padding: 20px 0 0;
+}
+.form-group label {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+.form-group label:first-letter {
+  text-transform: uppercase;
+}
+.form-group input {
+  display: block;
+  width: 100%;
+  padding: 0.325rem;
+  outline: none;
+}
+
+.modal-footer {
+  padding: 2rem 0 1rem;
+  border-top: 1px solid #ccc;
+  text-align: center;
+}
+.modal-footer .create-account {
+  font-size: 0.8rem;
+  text-decoration: underline;
+  padding-bottom: 0.325rem;
+  display: inline-block;
+}
+.modal-footer .create-account:hover {
+  color: #cae5e0;
+}
+.modal-footer .create-account:active {
+  color: #cae5e0;
+  text-decoration: none;
+}
+.modal-footer .login {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  color: #fff;
+  background-color: #cae5e0;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  font-size: 1.25rem;
+  font-family: Ubuntu;
+  font-weight: 400;
 }
 
 .footer__div {
