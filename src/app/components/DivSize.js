@@ -1,25 +1,28 @@
 import React, { Component } from "react";
 import {changeHeight} from "../actions/commentsActions";
-
+import {changeVisible} from "../actions/commentsActions";
 import {connect} from "react-redux";
 
 @connect((store) => {
     return {
-        comments: store.comments.comments,
-        //textHeight: store.comments.textHeight
+        display: store.comments.display,
+        textHeight: store.comments.textHeight
     }
 })
 
-export default class DivSize1 extends Component {
+export default class DivSize extends Component {
     componentWillUpdate() {
         const height = this.divElement.clientHeight;
         this.props.dispatch(changeHeight(height));
-        console.log(height, this.props.comments.textHeight);
+    }
+
+    componentDidUpdate() {
+        (!this.props.textHeight) && this.props.dispatch(changeVisible());
     }
 
     render() {
         return (
-            <div className="hidden-div" ref={ (divElement) => this.divElement = divElement}>
+            <div className={(this.props.display) ? "hidden-div" + " visible" : "hidden-div" + " hidden"} ref={ (divElement) => this.divElement = divElement}>
                 {this.props.usermessage ? this.props.usermessage : 'JOIN THE DISCUSSION'}
             </div>
         );

@@ -1,8 +1,7 @@
 import * as Comments from '../constants/comments';
 
-export function commentsReducer(state = {comments: [], is_fetching: false}, action) {
-    switch (action.type)
-    {
+export function commentsReducer(state = {comments: [], is_fetching: false, textHeight: 80, display: false}, action) {
+    switch (action.type) {
         case Comments.FETCH_COMMENTS_PENDING: {
             state = {...state, is_fetching: true};
             break;
@@ -17,9 +16,36 @@ export function commentsReducer(state = {comments: [], is_fetching: false}, acti
             state = {...state, is_fetching: false, error_message: action.payload.message};
             break;
         }
+
+        case Comments.ADD_COMMENT: {
+            let comments = [...state.comments];
+            comments.push(action.payload);
+            state = {...state, comments: comments};
+            break;
+        }
+
+        case Comments.DELETE_COMMENT: {
+            let comments = [...state.comments];
+            let delComment = comments.find(comment => comment.id === action.payload);
+            let position = comments.indexOf(delComment);
+            comments.splice(position, 1);
+            state = {...state, comments: comments};
+            break;
+        }
+
+        case Comments.CHANGE_HEIGHT: {
+            state = {...state, textHeight: action.payload, display: false};
+            break;
+        }
+
+        case Comments.CHANGE_VISIBLE: {
+            state = {...state, display: true};
+            break;
+        }
     }
 
     return state;
+
 }
 
 
