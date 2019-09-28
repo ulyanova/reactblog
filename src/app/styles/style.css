@@ -157,6 +157,9 @@ a {
 .articles .article:first-child a {
   display: inline-block;
 }
+.articles .article:first-child .img__link {
+  display: block;
+}
 
 .article:first-child img:first-of-type {
   margin-bottom: 100px;
