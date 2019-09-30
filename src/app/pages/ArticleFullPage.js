@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import ArticleFull from '../components/ArticleFull';
 import ArticlesLikeList from "../components/ArticlesLikeList";
 import CommentsList from "../components/CommentsList";
@@ -16,7 +16,7 @@ import {fetchArticlesLike} from '../actions/articlesActions';
     }
 })
 
-export default class ArticleFullPage extends Component {
+export default class ArticleFullPage extends PureComponent {
     constructor(props) {
         super(props);
 
@@ -24,6 +24,14 @@ export default class ArticleFullPage extends Component {
         this.props.dispatch(fetchComments(this.props.match.params.id));
         this.props.dispatch(fetchUsers());
         this.props.dispatch(fetchArticlesLike());
+    }
+
+    componentDidUpdate(prevProps) {
+        if(this.props.match.params.id !== prevProps.match.params.id ) {
+            this.props.dispatch(fetchPost(this.props.match.params.id));
+            this.props.dispatch(fetchComments(this.props.match.params.id));
+            this.props.dispatch(fetchArticlesLike());
+        };
     }
 
     render() {
