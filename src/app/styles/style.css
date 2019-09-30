@@ -240,6 +240,9 @@ a {
   margin-bottom: 0;
   display: inline-block;
 }
+.articles-preview__figure .article__h:hover {
+  color: #ff6f61;
+}
 
 .newsletter {
   background-color: #f0f0f0;
