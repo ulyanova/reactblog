@@ -12,6 +12,9 @@ const customStyles = {
         marginRight           : '-50%',
         transform             : 'translate(-50%, -50%)',
         width                 : '25%'
+    },
+    overlay : {
+        backgroundColor       : 'rgba(0,0,0,0.2)'
     }
 };
 
@@ -64,7 +67,7 @@ export default class AuthModal extends Component {
     }
 
     login() {
-        console.log(this.props.users, this.state.username, this.state.userpassword);
+        //console.log(this.props.users, this.state.username, this.state.userpassword);
         let user = this.props.users.find(item => item.name == this.state.username);
         user && (user.userpassword === this.state.userpassword &&
                 this.props.dispatch(authoriseUser(user)));
