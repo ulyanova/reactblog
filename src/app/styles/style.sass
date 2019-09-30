@@ -3,6 +3,9 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap')
 @import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap')
 
+$link-color: #ff6f61
+$link-color-light: #ff6f6185
+
 html, body
   min-width: 100%
 
@@ -50,6 +53,8 @@ a
       margin-right: 0
   &__a
     text-transform: uppercase
+    &:hover
+      color: $link-color
 
 .article
   text-align: left
@@ -81,6 +86,8 @@ a
     font-weight: 300
     text-transform: uppercase
     display: none
+    &:hover
+      color: $link-color
   img,h3,h5,p
     padding: 0 80px
 
@@ -92,8 +99,10 @@ a
     padding: 20px 34px
     border: 1px solid #626262
     display: none
-    border: none
     margin: 0 auto 60px
+    &:hover
+      color: $link-color
+      border-color: $link-color
   .article
     width: 50%
     padding: 0 0 130px
@@ -104,6 +113,8 @@ a
         margin-top: 0
     &__h
       display: block
+      &:hover
+        color: $link-color
     .article__p
       height: calc(24px * 3)
       overflow: hidden
@@ -152,6 +163,8 @@ a
     margin-right: 12px
     &:last-child
       margin-right: 0
+    &:hover
+      color: $link-color
 
 .you-may-also-like
   background-color: #f2f2f2
@@ -221,10 +234,8 @@ a
     width: 70px
     height: 70px
     line-height: 70px
-    background-color: #cae5e0
+    background-color: $link-color-light
     border-radius: 50%
-    &_passive
-      background-color: #ededea
   &-userimg__p
     color: #ffffff
     font-family: Ubuntu
@@ -244,6 +255,8 @@ a
     font-weight: 300
     text-transform: uppercase
     margin-right: 20px
+    &:hover
+      color: $link-color
   &__textarea
     padding: 28px 34px
     border-radius: 5px
@@ -278,7 +291,6 @@ a
 .visible
   display: block
 
-
 .modal-content
   font-family: Playfair Display
   font-size: 14px
@@ -301,6 +313,8 @@ a
     font-family: Ubuntu
     font-weight: 700
     float: right
+    &:hover
+      color: $link-color
 
 .form-group
   padding: 20px 0 0
@@ -325,15 +339,15 @@ a
     padding-bottom: 0.325rem
     display: inline-block
     &:hover
-      color: #cae5e0
+      color: $link-color
     &:active
-      color: #cae5e0
+      color: $link-color
       text-decoration: none
   .login
     margin-bottom: 1rem
     padding: 1rem
     color: #fff
-    background-color: #cae5e0
+    background-color: $link-color
     width: 100%
     display: inline-block
     text-align: center
@@ -349,15 +363,19 @@ a
     float: left
   &-social
     float: right
-  &__a
+  &__a, &__p
     margin-right: 20px
     float: left
     color: #000
+  &__a:hover
+      color: $link-color
 
 .social__a
   margin-right: 15px
   &:last-child
     margin-right: 0
+  &:hover
+    color: $link-color
 
 
 
