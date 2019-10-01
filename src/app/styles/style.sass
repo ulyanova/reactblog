@@ -203,7 +203,7 @@ a
         color: $link-color
 
 .newsletter
-  background-color: #f0f0f0
+  background-color: rgba(240,240,240,0.35)
   &__h3
     color: #333
     font-size: 30px
@@ -230,11 +230,13 @@ a
       padding-top: 3px
 
 .comments
-  padding: 67px 80px 96px
+  padding: 67px 80px
   text-align: left
 
 .comment
   padding-bottom: 57px
+  &:last-child
+    padding-bottom: 0
   &-userimg
     float: left
     margin-right: 36px
@@ -307,6 +309,7 @@ a
 
 .modal__a
   margin: 0
+  padding-bottom: 0
 
 .modal-header
   display: flex
@@ -368,6 +371,7 @@ a
 
 
 .footer
+  background-color: #f0f0f0
   &__div
     padding: 40px 70px 45px 150px
   &-links

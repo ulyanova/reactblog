@@ -251,7 +251,7 @@ a {
 }
 
 .newsletter {
-  background-color: #f0f0f0;
+  background-color: rgba(240, 240, 240, 0.35);
 }
 .newsletter__h3 {
   color: #333;
@@ -284,12 +284,15 @@ a {
 }
 
 .comments {
-  padding: 67px 80px 96px;
+  padding: 67px 80px;
   text-align: left;
 }
 
 .comment {
   padding-bottom: 57px;
+}
+.comment:last-child {
+  padding-bottom: 0;
 }
 .comment-userimg {
   float: left;
@@ -376,6 +379,7 @@ a {
 
 .modal__a {
   margin: 0;
+  padding-bottom: 0;
 }
 
 .modal-header {
@@ -450,6 +454,9 @@ a {
   font-weight: 400;
 }
 
+.footer {
+  background-color: #f0f0f0;
+}
 .footer__div {
   padding: 40px 70px 45px 150px;
 }
