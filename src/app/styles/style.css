@@ -414,9 +414,14 @@ a {
   outline: none;
 }
 
+.modal-errormessage {
+  color: #ff6f61;
+  margin-top: 1rem;
+  font-size: 12px;
+}
+
 .modal-footer {
   padding: 2rem 0 1rem;
-  border-top: 1px solid #ccc;
   text-align: center;
 }
 .modal-footer .create-account {

@@ -35,7 +35,8 @@ export default class AuthModal extends Component {
         this.state = {
             modalIsOpen: false,
             username: '',
-            userpassword: ''
+            userpassword: '',
+            errormessage: ''
         };
 
         this.openModal = this.openModal.bind(this);
@@ -69,10 +70,10 @@ export default class AuthModal extends Component {
     login() {
         //console.log(this.props.users, this.state.username, this.state.userpassword);
         let user = this.props.users.find(item => item.name == this.state.username);
-        user && (user.userpassword === this.state.userpassword &&
-                this.props.dispatch(authoriseUser(user)));
-
-        (!this.auth_user) && this.closeModal();
+        user ? (user.userpassword === this.state.userpassword ?
+                this.props.dispatch(authoriseUser(user)) :
+            this.setState({errormessage: 'Wrong password'})) :
+            this.setState({errormessage: 'User with this name is not registered'});
     }
 
     render()
@@ -102,13 +103,14 @@ export default class AuthModal extends Component {
                             <form>
                                 <div className="form-group">
                                     <label htmlFor="name">name:</label>
-                                    <input id="name" type="text" className="modal__input" value={this.state.username} onChange={this.handleChangeName} />
+                                    <input id="name" type="text" placeholder="Jane Doe" className="modal__input" value={this.state.username} onChange={this.handleChangeName} />
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="password">password:</label>
-                                    <input id="password" type="text" className="modal__input" value={this.state.userpassword} onChange={this.handleChangePassword} />
+                                    <input id="password" type="text" placeholder="Jane1987" className="modal__input" value={this.state.userpassword} onChange={this.handleChangePassword} />
                                 </div>
                             </form>
+                            <p className="modal-errormessage">{this.state.errormessage}</p>
                         </div>
                         <div className="modal-footer">
                             <a href="#" className="modal-footer__a login" onClick={(event) => {
