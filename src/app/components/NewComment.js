@@ -53,7 +53,7 @@ export default class NewComment extends Component {
                     <a href="#" className="comment__a" onClick={(event) => {
                         event.preventDefault();
                         this.setState({usermessage: ''});
-                    }}>delete</a>
+                    }}>cancel</a>
                 </div>
             </>
         );
