@@ -26,7 +26,13 @@ export default class CommentsList extends Component {
         return (
             <div className="container">
                 <div className="comments">
-                    <p className="article-type__p">{this.props.comments.length + ' comments'}</p>
+                    {
+                        (this.props.comments.length)
+                            ?
+                            <p className="article-type__p">{this.props.comments.length + ' comments'}</p>
+                            :
+                            <p className="article-type__p">Be the first to comment on this post!</p>
+                    }
                     {
                         (this.props.is_comments_fetching || this.props.is_users_fetching)
                             ?
