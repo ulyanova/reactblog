@@ -28,7 +28,12 @@ export default class Music extends React.Component
                     (!this.props.children) ?
                         (
                             this.props.is_fetching ?
-                                'Pending...' :
+                                <div className="container">
+                                    <div className="articles">
+                                        <h5 className="article-type__p">Pending...</h5>
+                                    </div>
+                                </div>
+                                :
                                 (
                                     <ArticleList />
                                 )

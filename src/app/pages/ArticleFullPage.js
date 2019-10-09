@@ -44,7 +44,11 @@ export default class ArticleFullPage extends PureComponent {
                 {
                     (this.props.is_articles_fetching)
                         ?
-                        'Pending...'
+                            <div className="container">
+                                <div className="articles">
+                                    <h5 className="article-type__p">Pending...</h5>
+                                </div>
+                            </div>
                         :
                         (
                             <>

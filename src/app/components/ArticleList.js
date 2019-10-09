@@ -22,7 +22,13 @@ export default class ArticleList extends Component {
     render()
     {
         if(!this.props.articles.length){
-            return null;
+            return (
+                <div className="container">
+                    <div className="articles">
+                        <h5 className="article-type__p">No articles on this topic</h5>
+                    </div>
+                </div>
+            );
         }
 
         let articles = this.props.articles.slice(-this.state.count).reverse().map((article, index) => {
