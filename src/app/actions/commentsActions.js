@@ -33,3 +33,10 @@ export function changeVisible() {
         type: 'CHANGE_VISIBLE'
     }
 }
+
+export function deleteReply(data) {
+    return {
+        type: 'DELETE_REPLY',
+        payload: data
+    }
+}
