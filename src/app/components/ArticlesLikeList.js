@@ -19,9 +19,12 @@ export default class ArticlesLikeList extends Component {
         return (
             <div className="articles-preview">
                 {
-                    (this.props.is_articlesLike_fetching)
-                        ?
-                        'Pending...'
+                    this.props.is_articlesLike_fetching ?
+                        <div className="container">
+                            <div className="articles">
+                                <h5 className="article-type__p">Pending...</h5>
+                            </div>
+                        </div>
                         :
                         (articlesLike)
                 }
