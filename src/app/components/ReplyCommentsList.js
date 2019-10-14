@@ -7,6 +7,7 @@ import NewComment from "./NewComment";
 
 @connect((store) => {
     return {
+        comments: store.comments.comments,
         users: store.users.users,
         authorization: store.users.authorization
     }

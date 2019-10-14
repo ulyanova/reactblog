@@ -48,7 +48,7 @@ export function commentsReducer(state = {comments: [], is_fetching: false, textH
             replies.splice(position, 1);
             console.log(replies);
             console.log(comments);
-            //state = {...state, comments: comments};
+            state = {...state, comments: comments};
             break;
         }
 
