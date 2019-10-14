@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {connect} from "react-redux";
 import {deleteComment, deleteReply} from "../actions/commentsActions";
-import ReplyCommentsList from './ReplyCommentsList';
+import CommentsList from './CommentsList';
 
 
 @connect((store) => {
@@ -39,7 +39,7 @@ export default class Comment extends Component {
                         (this.props.replies)
                             &&
                             <div className="reply-block">
-                                <ReplyCommentsList replies={this.props.replies} />
+                                <CommentsList replies={this.props.replies} />
                             </div>
                     }
                 </div>
