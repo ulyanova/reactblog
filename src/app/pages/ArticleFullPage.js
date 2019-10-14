@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import ArticleFull from '../components/ArticleFull';
 import ArticlesLikeList from "../components/ArticlesLikeList";
-import CommentsList from "../components/CommentsList";
+import CommentsBlock from "../components/CommentsBlock";
 
 import { connect } from 'react-redux';
 import {fetchPost} from '../actions/articlesActions';
@@ -71,7 +71,7 @@ export default class ArticleFullPage extends PureComponent {
                                         <ArticlesLikeList/>
                                     </div>
                                 </div>
-                                <CommentsList/>
+                                <CommentsBlock />
                             </>
                         )
                 }
