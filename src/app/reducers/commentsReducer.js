@@ -35,19 +35,11 @@ export function commentsReducer(state = {comments: [], is_fetching: false, textH
 
         case Comments.DELETE_REPLY: {
             let comments = [...state.comments];
-            console.log(comments);
-            console.log(action.payload);
             let comment = comments.find(comment => comment.id === action.payload.commentId);
-            console.log(comment);
             let replies = comment.replies;
-            console.log(replies);
             let delReplies = replies.find(comment => comment.id === action.payload.id);
-            console.log(delReplies);
             let position = replies.indexOf(delReplies);
-            console.log(position);
             replies.splice(position, 1);
-            console.log(replies);
-            console.log(comments);
             state = {...state, comments: comments};
             break;
         }

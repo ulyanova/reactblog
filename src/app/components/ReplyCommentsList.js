@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Reply from './Reply';
+import Comment from './Comment';
 import AuthModal from './AuthModal';
 
 import { connect } from 'react-redux';
@@ -18,7 +18,7 @@ export default class ReplyCommentsList extends Component {
     {
         let replies = this.props.replies.map((comment, index) => {
             let user = this.props.users.find(user => user.id === comment.userId);
-            return <Reply key={index} user={user} {...comment} />;
+            return <Comment key={index} user={user} {...comment} />;
         });
 
         return (

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {connect} from "react-redux";
-import {deleteComment} from "../actions/commentsActions";
+import {deleteComment, deleteReply} from "../actions/commentsActions";
 import ReplyCommentsList from './ReplyCommentsList';
 
 
@@ -26,8 +26,10 @@ export default class Comment extends Component {
                         this.props.user.id === this.props.auth_user.id ?
                             <a href="#" className="comment__a" onClick={(event) => {
                                 event.preventDefault();
-                                console.log(this.props.id);
-                                this.props.dispatch(deleteComment(this.props.id));
+                                console.log(this.props);
+                                (this.props.commentId) ?
+                                    this.props.dispatch(deleteReply(this.props)) :
+                                    this.props.dispatch(deleteComment(this.props.id))
                             }}>delete</a> :
                             <a href="#" className="comment__a" onClick={(event) => {
                             event.preventDefault();}
