@@ -5,7 +5,7 @@ import CommentsBlock from "../components/CommentsBlock";
 
 import { connect } from 'react-redux';
 import {fetchPost} from '../actions/articlesActions';
-import {fetchComments} from '../actions/commentsActions';
+import {fetchComments, fetchAllComments} from '../actions/commentsActions';
 import {fetchUsers} from "../actions/usersActions";
 import {fetchArticlesLike} from '../actions/articlesActions';
 
@@ -22,6 +22,7 @@ export default class ArticleFullPage extends PureComponent {
 
         this.props.dispatch(fetchPost(this.props.match.params.id));
         this.props.dispatch(fetchComments(this.props.match.params.id));
+        this.props.dispatch(fetchAllComments());
         this.props.dispatch(fetchUsers());
         this.props.dispatch(fetchArticlesLike());
     }

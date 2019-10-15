@@ -7,6 +7,13 @@ export function fetchComments(postId) {
     }
 }
 
+export function fetchAllComments() {
+    return {
+        type: 'FETCH_ALL_COMMENTS',
+        payload: axios.get('http://localhost:8082/api/comments/')
+    }
+}
+
 export function addComment(comment) {
     return {
         type: 'ADD_COMMENT',
