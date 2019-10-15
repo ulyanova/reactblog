@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import CommentsList from './CommentsList';
 import AuthModal from './AuthModal';
 import NewComment from "./NewComment";
@@ -14,7 +14,31 @@ import { connect } from 'react-redux';
     }
 })
 
-export default class CommentsBlock extends Component {
+export default class CommentsBlock extends PureComponent {
+    constructor() {
+        super();
+
+        this.state = {
+            sum: 0
+        };
+    }
+
+    componentDidUpdate() {
+        let commentsSum = this.props.comments.length;
+        let arr = this.props.comments.map(function(comment) {
+            if (comment.replies) {
+                return comment.replies.length;
+            } else {
+                return 0;
+            }
+        });
+        let repliesSum = arr.reduce(function(sum, current) {
+            return sum + current;
+        }, 0);
+        let result = repliesSum + commentsSum;
+        this.setState({sum: result});
+    }
+
     render()
     {
         return (
@@ -29,6 +53,13 @@ export default class CommentsBlock extends Component {
                         </div>
                         :
                         <div className="container">
+                            {
+                                (this.props.comments.length)
+                                    ?
+                                    <p className="article-type__p">{this.state.sum + ' comments'}</p>
+                                    :
+                                    <p className="article-type__p">Be the first to comment on this post!</p>
+                            }
                             <div className="comments">
                                 <CommentsList replies={this.props.comments} />
                                 <div className="comment comment-new">
