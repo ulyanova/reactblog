@@ -53,14 +53,14 @@ export default class CommentsBlock extends PureComponent {
                         </div>
                         :
                         <div className="container">
-                            {
-                                (this.props.comments.length)
-                                    ?
-                                    <p className="article-type__p">{this.state.sum + ' comments'}</p>
-                                    :
-                                    <p className="article-type__p">Be the first to comment on this post!</p>
-                            }
                             <div className="comments">
+                                {
+                                    (this.props.comments.length)
+                                        ?
+                                        <p className="article-type__p">{this.state.sum + ' comments'}</p>
+                                        :
+                                        <p className="article-type__p">Be the first to comment on this post!</p>
+                                }
                                 <CommentsList replies={this.props.comments} />
                                 <div className="comment comment-new">
                                     {
