@@ -26,11 +26,3 @@ export default class CommentsList extends Component {
         );
     }
 }
-
-/*{
-                    (this.props.comments.length)
-                        ?
-                        <p className="article-type__p">{this.props.comments.length + ' comments'}</p>
-                        :
-                        <p className="article-type__p">Be the first to comment on this post!</p>
-                }*/
