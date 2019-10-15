@@ -1,11 +1,11 @@
 import React, { PureComponent } from "react";
 import ArticleFull from '../components/ArticleFull';
 import ArticlesLikeList from "../components/ArticlesLikeList";
-import CommentsList from "../components/CommentsList";
+import CommentsBlock from "../components/CommentsBlock";
 
 import { connect } from 'react-redux';
 import {fetchPost} from '../actions/articlesActions';
-import {fetchComments} from '../actions/commentsActions';
+import {fetchComments, fetchAllComments} from '../actions/commentsActions';
 import {fetchUsers} from "../actions/usersActions";
 import {fetchArticlesLike} from '../actions/articlesActions';
 
@@ -22,6 +22,7 @@ export default class ArticleFullPage extends PureComponent {
 
         this.props.dispatch(fetchPost(this.props.match.params.id));
         this.props.dispatch(fetchComments(this.props.match.params.id));
+        this.props.dispatch(fetchAllComments());
         this.props.dispatch(fetchUsers());
         this.props.dispatch(fetchArticlesLike());
     }
@@ -44,7 +45,11 @@ export default class ArticleFullPage extends PureComponent {
                 {
                     (this.props.is_articles_fetching)
                         ?
-                        'Pending...'
+                            <div className="container">
+                                <div className="articles">
+                                    <h5 className="article-type__p">Pending...</h5>
+                                </div>
+                            </div>
                         :
                         (
                             <>
@@ -67,7 +72,7 @@ export default class ArticleFullPage extends PureComponent {
                                         <ArticlesLikeList/>
                                     </div>
                                 </div>
-                                <CommentsList/>
+                                <CommentsBlock />
                             </>
                         )
                 }

@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import Comment from './Comment';
+import AuthModal from './AuthModal';
 
 import { connect } from 'react-redux';
+import NewComment from "./NewComment";
 
 @connect((store) => {
     return {
@@ -11,17 +13,17 @@ import { connect } from 'react-redux';
     }
 })
 
-export default class CommentsList extends Component {
+export default class ReplyCommentsList extends Component {
     render()
     {
-        let comments = this.props.replies.map((comment, index) => {
+        let replies = this.props.replies.map((comment, index) => {
             let user = this.props.users.find(user => user.id === comment.userId);
             return <Comment key={index} user={user} {...comment} />;
         });
 
         return (
             <>
-                {comments}
+                {replies}
             </>
         );
     }

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {connect} from "react-redux";
-import {deleteComment, deleteReply} from "../actions/commentsActions";
-import CommentsList from './CommentsList';
+import {deleteReply} from "../actions/commentsActions";
+import ReplyCommentsList from './ReplyCommentsList';
 
 
 @connect((store) => {
@@ -10,7 +10,7 @@ import CommentsList from './CommentsList';
     }
 })
 
-export default class Comment extends Component {
+export default class Reply extends Component {
 
     render() {
         return (
@@ -26,21 +26,11 @@ export default class Comment extends Component {
                         this.props.user.id === this.props.auth_user.id ?
                             <a href="#" className="comment__a" onClick={(event) => {
                                 event.preventDefault();
-                                console.log(this.props);
-                                (this.props.commentId) ?
-                                    this.props.dispatch(deleteReply(this.props)) :
-                                    this.props.dispatch(deleteComment(this.props.id))
+                                this.props.dispatch(deleteReply(this.props));
                             }}>delete</a> :
                             <a href="#" className="comment__a" onClick={(event) => {
                             event.preventDefault();}
                             }>reply</a>
-                    }
-                    {
-                        (this.props.replies)
-                            &&
-                            <div className="reply-block">
-                                <CommentsList replies={this.props.replies} />
-                            </div>
                     }
                 </div>
             </div>
