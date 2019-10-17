@@ -48,6 +48,15 @@ export function commentsReducer(state = {comments: [], is_comments_fetching: fal
             break;
         }
 
+        case Comments.ADD_REPLY: {
+            let comments = [...state.comments];
+            let comment = comments.find(comment => comment.id === action.payload.commentId);
+            let replies = comment.replies;
+            replies.push(action.payload);
+            state = {...state, comments: comments};
+            break;
+        }
+
         case Comments.DELETE_REPLY: {
             let comments = [...state.comments];
             let comment = comments.find(comment => comment.id === action.payload.commentId);

@@ -41,6 +41,13 @@ export function changeVisible() {
     }
 }
 
+export function addReply(data) {
+    return {
+        type: 'ADD_REPLY',
+        payload: data
+    }
+}
+
 export function deleteReply(data) {
     return {
         type: 'DELETE_REPLY',

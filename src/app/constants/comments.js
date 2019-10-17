@@ -10,4 +10,5 @@ export const ADD_COMMENT = 'ADD_COMMENT';
 export const DELETE_COMMENT = 'DELETE_COMMENT';
 export const CHANGE_HEIGHT = 'CHANGE_HEIGHT';
 export const CHANGE_VISIBLE = 'CHANGE_VISIBLE';
+export const ADD_REPLY = 'ADD_REPLY';
 export const DELETE_REPLY = 'DELETE_REPLY';
