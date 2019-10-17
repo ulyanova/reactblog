@@ -33,6 +33,10 @@ a {
   display: inline-block !important;
 }
 
+.passive {
+  display: none;
+}
+
 .logo {
   color: #000;
   font-family: Inconsolata;
@@ -348,6 +352,27 @@ a {
   color: #c8c8c8;
   font-family: Ubuntu;
   font-weight: 300;
+}
+
+.reply-block .comment {
+  padding: 20px 0 0;
+}
+.reply-block .comment-userimg {
+  margin-right: 26px;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+}
+.reply-block .comment-userimg__p {
+  font-size: 24px;
+}
+.reply-block .comment__textarea {
+  padding: 10px 0 0;
+  border: none;
+  border-bottom: 1px solid #c8c8c8;
+  border-radius: 0;
+  line-height: 14px;
+  margin-bottom: 10px;
 }
 
 .hidden-div {
