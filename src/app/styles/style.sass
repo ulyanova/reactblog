@@ -282,7 +282,8 @@ a
     font-family: inherit
     font-weight: inherit
     margin-bottom: 38px
-    &::placeholder
+    &:empty:not(:focus):before
+      content: attr(data-placeholder)
       color: #c8c8c8
       font-family: Ubuntu
       font-weight: 300
@@ -298,30 +299,11 @@ a
     &-userimg__p
       font-size: 24px
     &__textarea
-      padding: 10px 0 0
+      padding: 10px 0 6px
       border: none
       border-bottom: 1px solid #c8c8c8
       border-radius: 0
-      line-height: 14px
       margin-bottom: 10px
-
-
-
-.hidden-div
-  white-space: pre-wrap
-  word-wrap: break-word
-  font-family: Ubuntu
-  font-weight: 300
-  padding: 28px 34px
-  border-radius: 5px
-  border: 1px solid #c8c8c8
-  width: 100%
-
-.hidden
-  display: none
-
-.visible
-  display: block
 
 .modal-content
   font-family: Playfair Display
