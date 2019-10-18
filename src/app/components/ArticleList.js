@@ -40,7 +40,8 @@ export default class ArticleList extends Component {
                 <div className="articles">
                     {articles}
                 </div>
-                <a href="#" className={(this.state.count < this.props.articles.length) ? "articles__button" + " active" : "articles__button"} onClick={(event) => {
+                <a href="#" className={(this.state.count < this.props.articles.length) ? "articles__button" + " active" :
+                    "articles__button"} onClick={(event) => {
                     event.preventDefault();
                     (this.state.count < this.props.articles.length) && this.setState({count: this.state.count+4});
                 }}>Load more</a>
