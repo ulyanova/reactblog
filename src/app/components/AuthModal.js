@@ -103,7 +103,7 @@ export default class AuthModal extends Component {
                             <form>
                                 <div className="form-group">
                                     <label htmlFor="name">name:</label>
-                                    <input id="name" type="text" placeholder="Jane Doe" className="modal__input"
+                                    <input id="name" type="text" autoFocus placeholder="Jane Doe" className="modal__input"
                                            value={this.state.username} onChange={this.handleChangeName} />
                                 </div>
                                 <div className="form-group">
