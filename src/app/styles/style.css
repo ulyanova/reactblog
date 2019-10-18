@@ -21,6 +21,7 @@ a {
   text-decoration: none;
   color: inherit;
   transition: color 0.5s;
+  outline: none;
 }
 
 .clearfix:after {
@@ -33,12 +34,22 @@ a {
   display: inline-block !important;
 }
 
+.passive {
+  display: none;
+}
+
 .logo {
   color: #000;
   font-family: Inconsolata;
   font-size: 30px;
   text-transform: uppercase;
   letter-spacing: 6px;
+}
+.logo:focus {
+  color: #ff6f61;
+}
+.logo:hover {
+  color: #ff6f61;
 }
 
 .header {
@@ -65,6 +76,9 @@ a {
 .menu__a:hover {
   color: #ff6f61;
 }
+.menu__a:focus {
+  color: #ff6f61;
+}
 
 .article {
   text-align: left;
@@ -80,6 +94,9 @@ a {
 }
 .article__img:nth-of-type(2) {
   margin-top: 31px;
+}
+.article .img__link:focus .article__img {
+  filter: grayscale(0);
 }
 .article-type__p {
   margin-bottom: 28px;
@@ -113,6 +130,9 @@ a {
 .article__a:hover {
   color: #ff6f61;
 }
+.article__a:focus {
+  color: #ff6f61;
+}
 .article img, .article h3, .article h5, .article p {
   padding: 0 80px;
 }
@@ -132,6 +152,10 @@ a {
   color: #ff6f61;
   border-color: #ff6f61;
 }
+.articles__button:focus {
+  color: #ff6f61;
+  border-color: #ff6f61;
+}
 .articles .article {
   width: 50%;
   padding: 0 0 130px;
@@ -146,6 +170,9 @@ a {
   display: block;
 }
 .articles .article__h:hover {
+  color: #ff6f61;
+}
+.articles .article__h:focus {
   color: #ff6f61;
 }
 .articles .article .article__p {
@@ -209,6 +236,9 @@ a {
 .share__a:hover {
   color: #ff6f61;
 }
+.share__a:focus {
+  color: #ff6f61;
+}
 
 .you-may-also-like {
   background-color: #f2f2f2;
@@ -249,6 +279,9 @@ a {
 .articles-preview__figure .article__h:hover {
   color: #ff6f61;
 }
+.articles-preview__figure .article__h:focus {
+  color: #ff6f61;
+}
 
 .newsletter {
   background-color: rgba(240, 240, 240, 0.35);
@@ -268,6 +301,9 @@ a {
   border-bottom: 1px solid #000;
   padding: 10px 0;
 }
+.newsletter__input:hover {
+  border-color: #ff6f61;
+}
 .newsletter__input input {
   line-height: 17px;
   width: calc(100% - 15px);
@@ -281,6 +317,12 @@ a {
 .newsletter__input a {
   float: right;
   padding-top: 3px;
+}
+.newsletter__input a:hover {
+  color: #ff6f61;
+}
+.newsletter__input a:focus {
+  color: #ff6f61;
 }
 
 .comments {
@@ -330,6 +372,9 @@ a {
 .comment__a:hover {
   color: #ff6f61;
 }
+.comment__a:focus {
+  color: #ff6f61;
+}
 .comment__textarea {
   padding: 28px 34px;
   border-radius: 5px;
@@ -344,29 +389,31 @@ a {
   font-weight: inherit;
   margin-bottom: 38px;
 }
-.comment__textarea::placeholder {
+.comment__textarea:empty:not(:focus):before {
+  content: attr(data-placeholder);
   color: #c8c8c8;
   font-family: Ubuntu;
   font-weight: 300;
 }
 
-.hidden-div {
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  font-family: Ubuntu;
-  font-weight: 300;
-  padding: 28px 34px;
-  border-radius: 5px;
-  border: 1px solid #c8c8c8;
-  width: 100%;
+.reply-block .comment {
+  padding: 20px 0 0;
 }
-
-.hidden {
-  display: none;
+.reply-block .comment-userimg {
+  margin-right: 26px;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
 }
-
-.visible {
-  display: block;
+.reply-block .comment-userimg__p {
+  font-size: 24px;
+}
+.reply-block .comment__textarea {
+  padding: 10px 0 6px;
+  border: none;
+  border-bottom: 1px solid #c8c8c8;
+  border-radius: 0;
+  margin-bottom: 10px;
 }
 
 .modal-content {
@@ -398,6 +445,9 @@ a {
   float: right;
 }
 .modal-header__a:hover {
+  color: #ff6f61;
+}
+.modal-header__a:focus {
   color: #ff6f61;
 }
 
@@ -441,6 +491,9 @@ a {
   color: #ff6f61;
   text-decoration: none;
 }
+.modal-footer .create-account:focus {
+  color: #ff6f61;
+}
 .modal-footer .login {
   margin-bottom: 1rem;
   padding: 1rem;
@@ -452,6 +505,12 @@ a {
   font-size: 1.25rem;
   font-family: Ubuntu;
   font-weight: 400;
+}
+.modal-footer .login:hover {
+  background-color: #FE840E;
+}
+.modal-footer .login:focus {
+  background-color: #FE840E;
 }
 
 .footer {
@@ -474,6 +533,9 @@ a {
 .footer__a:hover {
   color: #ff6f61;
 }
+.footer__a:focus {
+  color: #ff6f61;
+}
 
 .social__a {
   margin-right: 15px;
@@ -482,5 +544,8 @@ a {
   margin-right: 0;
 }
 .social__a:hover {
+  color: #ff6f61;
+}
+.social__a:focus {
   color: #ff6f61;
 }
