@@ -28,19 +28,6 @@ export function deleteComment(id) {
     }
 }
 
-export function changeHeight(height) {
-    return {
-        type: 'CHANGE_HEIGHT',
-        payload: height
-    }
-}
-
-export function changeVisible() {
-    return {
-        type: 'CHANGE_VISIBLE'
-    }
-}
-
 export function addReply(data) {
     return {
         type: 'ADD_REPLY',
@@ -52,5 +39,12 @@ export function deleteReply(data) {
     return {
         type: 'DELETE_REPLY',
         payload: data
+    }
+}
+
+export function updateCount(count) {
+    return {
+        type: 'UPDATE_COUNT',
+        payload: count
     }
 }

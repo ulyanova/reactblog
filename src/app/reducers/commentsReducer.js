@@ -1,6 +1,6 @@
 import * as Comments from '../constants/comments';
 
-export function commentsReducer(state = {comments: [], is_comments_fetching: false, all_comments: [], is_all_comments_fetching: false, textHeight: 80, display: false}, action) {
+export function commentsReducer(state = {comments: [], is_comments_fetching: false, all_comments: [], is_all_comments_fetching: false, count: 0}, action) {
     switch (action.type) {
         case Comments.FETCH_COMMENTS_PENDING: {
             state = {...state, is_comments_fetching: true};
@@ -23,7 +23,23 @@ export function commentsReducer(state = {comments: [], is_comments_fetching: fal
         }
 
         case Comments.FETCH_ALL_COMMENTS_FULFILLED: {
-            state = {...state, is_all_comments_fetching: false, all_comments: action.payload.data};
+
+            //массив всех комментариев
+            let comments = action.payload.data;
+            //массив с массивами вложенных комментариев
+            let replies = action.payload.data.map(function (comment) {
+                return comment.replies;
+            });
+            //объединяем все массивы вложенных комментариев в один массив
+            replies = replies.reduce((prev, item) => prev.concat(item), Array(0));
+            //объединяем все комментарии в один массив
+            comments = comments.concat(replies);
+            //выбираем только id комментариев
+            let commentsId = comments.map((comment) => comment.id);
+            //выбираем максимальное значение id
+            let max = commentsId.reduce((prev, cur) => cur > prev ? cur : prev);
+
+            state = {...state, is_all_comments_fetching: false, all_comments: action.payload.data, count: max};
             break;
         }
 
@@ -68,13 +84,8 @@ export function commentsReducer(state = {comments: [], is_comments_fetching: fal
             break;
         }
 
-        case Comments.CHANGE_HEIGHT: {
-            state = {...state, textHeight: action.payload, display: false};
-            break;
-        }
-
-        case Comments.CHANGE_VISIBLE: {
-            state = {...state, display: true};
+        case Comments.UPDATE_COUNT: {
+            state = {...state, count: action.payload};
             break;
         }
     }
