@@ -6,9 +6,9 @@ export default class Newsletter extends Component {
             <div className="newsletter">
                 <div className="container">
                     <div className="newsletter__form">
-                        <h3 className="newsletter__h3">Sign up for our newsletter!</h3>
+                        <h3 className="newsletter__h3">Sign up&nbsp;for our newsletter!</h3>
                         <div className="newsletter__input">
-                            <input type="text" placeholder="Enter a valid email address"/>
+                            <input type="text" placeholder="Enter a&nbsp;valid email address"/>
                             <a href="#"><i className="icon-right-open" onClick={(event)=>{
                                 event.preventDefault();
                             }}></i></a>

@@ -74,7 +74,7 @@ export default class AuthModal extends Component {
         user ? (user.userpassword === this.state.userpassword ?
                 this.props.dispatch(authoriseUser(user)) :
             this.setState({errormessage: 'Wrong password'})) :
-            this.setState({errormessage: 'User with this name is not registered'});
+            this.setState({errormessage: 'User with this name is&nbsp;not registered'});
     }
 
     render()
