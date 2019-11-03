@@ -7,17 +7,24 @@ $link-color: #ff6f61
 $link-color-light: #ff6f6185
 $link-color-dark: #FE840E
 
-html, body
+html,body
   min-width: 100%
+  font-size: 20px
+
+.app
+  width: 100%
 
 .container
+  display: flex
+  width: 100%
   max-width: 1200px
+  min-width: 280px
   margin: 0 auto
   text-align: center
   font-family: Playfair Display
-  font-size: 14px
+  font-size: 0.7em
   font-weight: 400
-  line-height: 24px
+  line-height: 1.714em
   color: #626262
 
 a
@@ -25,11 +32,10 @@ a
   color: inherit
   transition: color 0.5s
   outline: none
-
-.clearfix:after
-  content: " "
-  display: block
-  clear: both
+  &:hover
+    color: $link-color
+  &:focus
+    color: $link-color
 
 .active
   display: inline-block !important
@@ -37,214 +43,183 @@ a
 .passive
   display: none
 
+.header
+  display: flex
+  justify-content: space-between
+  padding: 3.4rem 3.5rem
+  .container
+    flex-direction: row
+
 .logo
+  display: flex
+  justify-content: flex-start
+  flex: 0
   color: #000
   font-family: Inconsolata
-  font-size: 30px
+  font-size: 1.5em
   text-transform: uppercase
-  letter-spacing: 6px
-  &:focus
-    color: $link-color
-  &:hover
-    color: $link-color
-
-.header
-  padding: 68px 70px
-  &__logo
-    float: left
+  letter-spacing: 0.2em
+  margin-right: 14rem
 
 .menu
-  float: right
+  display: flex
+  justify-content: space-between
+  flex: 1
   &__li
-    float: left
     list-style-type: none
-    margin-right: 100px
-    &:last-child
-      margin-right: 0
   &__a
     text-transform: uppercase
-    &:hover
+    &_active
       color: $link-color
-    &:focus
-      color: $link-color
+
+.content
+  display: flex
+  flex-direction: column
+  .container
+    flex-direction: column
 
 .article
   text-align: left
+  padding: 0 4rem
   &__img
     width: 100%
-    margin-bottom: 55px
+    margin-bottom: 3.93em
     filter: grayscale(70%)
     transition: filter 0.5s
     &:hover
       filter: grayscale(0)
     &:nth-of-type(2)
-      margin-top: 31px
+      margin-top: 2.21em
   .img__link:focus .article__img
     filter: grayscale(0)
   &-type__p
-    margin-bottom: 28px
+    margin-bottom: 2em
     color: #b4ad9e
     font-family: Ubuntu
     font-weight: 300
     text-transform: uppercase
   &__h
-    font-size: 30px
-    margin-bottom: 34px
+    font-size: 1.5rem
+    line-height: 1.2em
+    margin-bottom: 1.13em
   &__h:first-letter
     text-transform: uppercase
   &__p
-    margin-bottom: 24px
+    margin-bottom: 2em
     &_italic
       font-style: italic
-      margin-left: 20px
+      margin-left: 1rem
   &__a
-    margin: 50px 80px 0
+    margin-top: 3.57em
     color: #b4ad9e
     font-family: Ubuntu
     font-weight: 300
     text-transform: uppercase
     display: none
-    &:hover
-      color: $link-color
-    &:focus
-      color: $link-color
-  img,h3,h5,p
-    padding: 0 80px
 
 .articles
   display: flex
   flex-wrap: wrap
   &__button
-    font-size: 20px
-    padding: 20px 34px
+    font-size: 1rem
+    padding: 1em 1.7em
     border: 1px solid #626262
     display: none
-    margin: 0 auto 60px
+    margin: 0 auto 3em
     &:hover
       color: $link-color
       border-color: $link-color
     &:focus
       color: $link-color
       border-color: $link-color
+  .no-articles__h5
+    padding-left: 3.5rem
+    padding-right: 3.5rem
   .article
     width: 50%
-    padding: 0 0 130px
+    padding-bottom: 9.286em
+    &:nth-child(2n)
+      padding-left: 4rem
+      padding-right: 1.5rem
+    &:nth-child(2n+1)
+      padding-left: 1.5rem
+      padding-right: 4rem
     &__img
-      margin-bottom: 32px
+      margin-bottom: 2.286em
     &:nth-of-type(2)
       img
         margin-top: 0
     &__h
       display: block
-      &:hover
-        color: $link-color
-      &:focus
-        color: $link-color
     .article__p
-      height: calc(24px * 3)
+      height: calc(1.65em * 3)
       overflow: hidden
       margin-bottom: 0
-    &:nth-child(2n)
-      img,h3,h5,p
-        padding-left: 80px
-        padding-right: 30px
-    &:nth-child(2n+1)
-      img,h3,h5,p
-        padding-left: 30px
-        padding-right: 80px
     &:first-child
-      padding: 0 0 135px
+      padding: 0 0 9.29em
       width: 100%
-      img,h3,h5,p
-        padding-left: 80px
-        padding-right: 80px
+      h3,h5,p,.article__a
+        padding-left: 4rem
+        padding-right: 4rem
       .article__p
-        height: calc(24px * 7)
+        height: calc(1.65em * 7)
       a
         display: inline-block
       .img__link
         display: block
 
 .article:first-child
+  padding: 0
+  h5,p,img,.article__h
+    padding-left: 4rem
+    padding-right: 4rem
   img:first-of-type
-    margin-bottom: 100px
-    padding: 0
+    margin-bottom: 7.143em
+    padding-left: 0
+    padding-right: 0
 
 .share
-  float: right
-  margin: 41px 80px 76px
+  display: flex
+  justify-content: flex-end
+  margin: 2.928em 4rem 5.428em
   &__p
     color: #b4ad9e
     font-family: Ubuntu
-    font-size: 13px
+    font-size: 0.928em
     font-weight: 300
     text-transform: uppercase
-    margin-right: 23px
-    float: left
+    margin-right: 1.643em
   &__a
-    float: left
-    font-size: 17px
+    font-size: 1.214em
     color: #b4ad9e
-    margin-right: 12px
+    margin-right: 0.857em
     &:last-child
       margin-right: 0
-    &:hover
-      color: $link-color
-    &:focus
-      color: $link-color
-
-.you-may-also-like
-  background-color: #f2f2f2
-  opacity: 0.8
-  padding: 69px 0 89px
-  .article-type__p
-    padding: 0 80px
-    margin-bottom: 40px
-    text-align: left
-
-.articles-preview
-  display: flex
-  flex-wrap: nowrap
-  justify-content: space-between
-  padding: 0 80px
-  &__figure
-    width: 100%/3
-    padding: 0 20px
-    text-align: left
-    &:first-of-type
-      padding-left: 0
-    &:last-of-type
-      padding-right: 0
-    img
-      margin-bottom: 24px
-    .article__h
-      font-size: 20px
-      margin-bottom: 0
-      display: inline-block
-      &:hover
-        color: $link-color
-      &:focus
-        color: $link-color
 
 .newsletter
   background-color: rgba(240,240,240,0.35)
   &__h3
     color: #333
-    font-size: 30px
-    letter-spacing: 0.75px
-    margin-bottom: 70px
+    font-size: 1.5rem
+    line-height: 1.167em
+    letter-spacing: 0.025em
+    margin-bottom: 2.333em
   &__form
-    width: 37.736%
+    width: 100%
+    max-width: 400px
     margin: 0 auto
-    padding: 73px 0
+    padding: 5.214em 0
   &__input
     border-bottom: 1px solid #000
-    padding: 10px 0
+    padding: 0.714em 0
+    transition: all 0.5s
     &:hover
       border-color: $link-color
+      input::placeholder
+        color: $link-color
+        transition: all 0.5s
     input
-      line-height: 17px
-      width: calc(100% - 15px)
+      width: calc(100% - 1em)
       background-color: transparent
       border: none
       outline: none
@@ -253,23 +228,47 @@ a
       font-size: inherit
     a
       float: right
-      padding-top: 3px
-      &:hover
-        color: $link-color
-      &:focus
-        color: $link-color
+      padding-top: 0.214em
+
+.you-may-also-like
+  background-color: rgba(242, 242, 242, 0.8)
+  padding: 4.929em 0 6.357em
+  .article-type__p
+    padding: 0 4rem
+    margin-bottom: 2.857em
+    text-align: left
+
+.articles-preview
+  display: flex
+  flex-wrap: nowrap
+  justify-content: space-between
+  padding: 0 4rem
+  &__figure
+    width: 100%/3
+    padding: 0 1rem
+    text-align: left
+    &:first-of-type
+      padding-left: 0
+    &:last-of-type
+      padding-right: 0
+    img
+      margin-bottom: 1.714em
+    .article__h
+      font-size: 1.428em
+      margin-bottom: 0
+      display: inline-block
 
 .comments
-  padding: 67px 80px
+  padding: 4.786em 4rem
   text-align: left
 
 .comment
-  padding-bottom: 57px
+  padding-bottom: 4.07em
   &:last-child
     padding-bottom: 0
   &-userimg
     float: left
-    margin-right: 36px
+    margin-right: 1.8rem
     width: 70px
     height: 70px
     line-height: 70px
@@ -278,7 +277,7 @@ a
   &-userimg__p
     color: #ffffff
     font-family: Ubuntu
-    font-size: 34px
+    font-size: 1.7rem
     font-weight: 300
     text-transform: uppercase
     text-align: center
@@ -287,20 +286,16 @@ a
   &-username__p
     font-weight: 700
   &__p
-    margin-bottom: 12px
+    margin-bottom: 0.857em
   &__a
     color: #b4ad9e
     font-family: Ubuntu
     font-weight: 300
     text-transform: uppercase
-    margin-right: 20px
-    &:hover
-      color: $link-color
-    &:focus
-      color: $link-color
+    margin-right: 1rem
   &__textarea
-    padding: 28px 34px
-    border-radius: 5px
+    padding: 2em 1.7rem
+    border-radius: 0.357em
     border: 1px solid #c8c8c8
     width: 100%
     outline: none
@@ -310,7 +305,7 @@ a
     color: inherit
     font-family: inherit
     font-weight: inherit
-    margin-bottom: 38px
+    margin-bottom: 2.714em
     &:empty:not(:focus):before
       content: attr(data-placeholder)
       color: #c8c8c8
@@ -319,26 +314,26 @@ a
 
 .reply-block
   .comment
-    padding: 20px 0 0
+    padding: 1.428em 0 0
     &-userimg
-      margin-right: 26px
+      margin-right: 1.3rem
       width: 45px
       height: 45px
       line-height: 45px
     &-userimg__p
-      font-size: 24px
+      font-size: 1.2rem
     &__textarea
-      padding: 10px 0 6px
+      padding: 0.714em 0 0.428em
       border: none
       border-bottom: 1px solid #c8c8c8
       border-radius: 0
-      margin-bottom: 10px
+      margin-bottom: 0.714em
 
 .modal-content
   font-family: Playfair Display
-  font-size: 14px
+  font-size: 0.7rem
   font-weight: 400
-  line-height: 14px
+  line-height: 1em
   color: #626262
 
 .modal__a
@@ -348,62 +343,55 @@ a
 .modal-header
   display: flex
   justify-content: space-between
-  padding: 1rem 0 2rem
+  padding: 1em 0 2em
   border-bottom: 1px solid #ccc
   &__h2
-    font-size: 1.25rem
+    font-size: 1.25em
+    line-height: 1.5em
   &__a
-    font-size: 1.25rem
+    font-size: 1.25em
     font-family: Ubuntu
     font-weight: 700
-    float: right
-    &:hover
-      color: $link-color
-    &:focus
-      color: $link-color
 
 .form-group
-  padding: 20px 0 0
+  padding: 1.428em 0 0
   label
     display: inline-block
-    margin-bottom: 1rem
+    margin-bottom: 1em
     &:first-letter
       text-transform: uppercase
   input
     display: block
     width: 100%
-    padding: 0.325rem
+    padding: 0.464em
     outline: none
 
 .modal-errormessage
   color: $link-color
-  margin-top:  1rem
-  font-size: 12px
+  margin-top:  1em
+  font-size: 0.857em
 
 .modal-footer
-  padding: 2rem 0 1rem
+  padding: 2em 0 1em
   text-align: center
   .create-account
-    font-size: 0.8rem
+    font-size: 0.8em
+    line-height: 1em
     text-decoration: underline
-    padding-bottom: 0.325rem
+    padding-bottom: 0.464em
     display: inline-block
-    &:hover
-      color: $link-color
     &:active
       color: $link-color
       text-decoration: none
-    &:focus
-      color: $link-color
   .login
-    margin-bottom: 1rem
-    padding: 1rem
+    margin-bottom: 1em
+    padding: 1em
     color: #fff
     background-color: $link-color
     width: 100%
     display: inline-block
     text-align: center
-    font-size: 1.25rem
+    font-size: 1rem
     font-family: Ubuntu
     font-weight: 400
     &:hover
@@ -411,32 +399,162 @@ a
     &:focus
       background-color: $link-color-dark
 
-
 .footer
   background-color: #f0f0f0
   &__div
-    padding: 40px 70px 45px 80px
+    padding: 2.857em 3.5rem 3.214em 4rem
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
   &-links
-    float: left
+    display: flex
+    justify-content: flex-start
   &-social
-    float: right
+    display: flex
+    justify-content: flex-end
   &__a, &__p
-    margin-right: 20px
-    float: left
+    margin-right: 1rem
     color: #000
-  &__a:hover
-    color: $link-color
-  &__a:focus
-      color: $link-color
 
 .social__a
-  margin-right: 15px
+  margin-right: 0.75rem
   &:last-child
     margin-right: 0
-  &:hover
-    color: $link-color
-  &:focus
-    color: $link-color
 
+
+@media screen and (max-width: 940px)
+  .header
+    .logo
+      margin-right: 7rem
+  .article__h,.newsletter__h3
+    font-size: 1.2rem
+
+
+@media screen and (max-width: 750px)
+  .header
+    .container
+      flex-direction: column
+      .logo
+        margin-bottom: 1.5em
+
+  .article__h, .newsletter__h3
+    font-size: 1.1rem
+
+  .articles__button
+    font-size: 0.8rem
+
+  .articles
+    .article
+      padding-bottom: 7.143em
+      &:first-child
+        padding: 0 0 7.143em
+
+  .article:first-child
+    img:first-of-type
+      margin-bottom: 5.714em
+
+  .you-may-also-like
+    .article__h
+      font-size: 0.9rem
+
+
+@media screen and (max-width: 580px)
+  .header
+    padding: 2rem 0
+    .logo
+      justify-content: center
+      margin-right: 0
+      width: 100%
+    .menu
+      flex-direction: column
+      justify-content: center
+      &__li
+        border-bottom: 1px solid rgba(98,98,98,0.1)
+        &:first-child
+          border-top: 1px solid rgba(98,98,98,0.1)
+
+  .article__h, .newsletter__h3
+    font-size: 0.9rem
+
+  .articles__button
+    font-size: 0.7rem
+
+  .article
+    padding: 0 1rem
+    &:first-child
+      img:first-of-type
+        margin-bottom: 3.57em
+
+  .articles
+    .article
+      width: 100%
+      padding-bottom: 3.57em
+      &:nth-child(2n)
+        padding-left: 1rem
+        padding-right: 1rem
+      &:nth-child(2n+1)
+        padding-left: 1rem
+        padding-right: 1rem
+      &:first-child
+        padding-left: 0
+        padding-right: 0
+        padding-bottom: 3.57em
+        h3,h5,p,.article__a
+          padding-left: 1rem
+          padding-right: 1rem
+    .no-articles__h5
+      padding-left: 1rem
+      padding-right: 1rem
+
+  .article:first-child
+    h5,p,img,.article__h
+      padding-left: 1rem
+      padding-right: 1rem
+
+  .newsletter__form
+    padding: 5.214em 1rem
+
+  .footer__div
+    padding: 2rem 1rem
+
+  .footer-links
+    padding-bottom: 0.5em
+
+  .you-may-also-like
+    padding: 3em 0
+    .article-type__p
+      padding: 0 1rem
+      margin-bottom: 1.5em
+
+  .articles-preview
+    flex-wrap: wrap
+    padding: 0 1rem
+    &__figure
+      padding: 0 0 2em
+      &:last-of-type
+        padding-bottom: 0
+
+  .comments
+    padding: 3em 1rem
+
+  .comment
+    padding-bottom: 2em
+    &-userimg
+      margin-right: 0.8rem
+      width: 40px
+      height: 40px
+      line-height: 40px
+    &-userimg__p
+      font-size: 1.1rem
+
+  .reply-block
+    .comment
+      &-userimg
+        margin-right: 0.6rem
+        width: 24px
+        height: 24px
+        line-height: 24px
+      &-userimg__p
+        font-size: 0.6rem
 
 
