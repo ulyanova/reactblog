@@ -1,5 +1,6 @@
 import React from 'react';
 import ArticleList from '../components/ArticleList';
+import Newsletter from "../components/Newsletter";
 
 import { connect } from 'react-redux';
 import { fetchArticles } from '../actions/articlesActions';
@@ -41,6 +42,7 @@ export default class Music extends React.Component
                         :
                         (this.props.children)
                 }
+                <Newsletter />
             </>
         );
     }
