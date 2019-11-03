@@ -59,11 +59,21 @@ export default class ArticleFullPage extends PureComponent {
                                     </article>
                                     <div className="share">
                                         <p className="share__p">share</p>
-                                        <a href="#" className="share__a"><i className="icon-facebook"></i></a>
-                                        <a href="#" className="share__a"><i className="icon-twitter"></i></a>
-                                        <a href="#" className="share__a"><i className="icon-gplus"></i></a>
-                                        <a href="#" className="share__a"><i className="icon-tumblr"></i></a>
-                                        <a href="#" className="share__a"><i className="icon-pinterest-circled"></i></a>
+                                        <a href="#" className="share__a"><i className="icon-facebook" onClick={(event) => {
+                                            event.preventDefault();
+                                        }}></i></a>
+                                        <a href="#" className="share__a"><i className="icon-twitter" onClick={(event) => {
+                                            event.preventDefault();
+                                        }}></i></a>
+                                        <a href="#" className="share__a"><i className="icon-gplus" onClick={(event) => {
+                                            event.preventDefault();
+                                        }}></i></a>
+                                        <a href="#" className="share__a"><i className="icon-tumblr" onClick={(event) => {
+                                            event.preventDefault();
+                                        }}></i></a>
+                                        <a href="#" className="share__a"><i className="icon-pinterest-circled" onClick={(event) => {
+                                            event.preventDefault();
+                                        }}></i></a>
                                     </div>
                                 </div>
                                 <div className="you-may-also-like">
