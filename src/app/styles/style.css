@@ -301,7 +301,7 @@ a:focus {
   padding: 0 4rem;
 }
 .articles-preview__figure {
-  width: 100%/3;
+  flex: 1;
   padding: 0 1rem;
   text-align: left;
 }
@@ -652,6 +652,7 @@ a:focus {
   }
   .articles-preview__figure {
     padding: 0 0 2em;
+    flex: 100%;
   }
   .articles-preview__figure:last-of-type {
     padding-bottom: 0;
