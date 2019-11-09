@@ -26,6 +26,7 @@ html,body
   font-weight: 400
   line-height: 1.714em
   color: #626262
+  padding: 0 3.5rem
 
 a
   text-decoration: none
@@ -49,6 +50,7 @@ a
   padding: 3.4rem 3.5rem
   .container
     flex-direction: row
+    padding: 0
 
 .logo
   display: flex
@@ -81,17 +83,20 @@ a
 .article
   text-align: left
   padding: 0 4rem
-  &__img
-    width: 100%
+  .article-img
+    display: block
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
     margin-bottom: 3.93em
     filter: grayscale(70%)
     transition: filter 0.5s
     &:hover
       filter: grayscale(0)
-    &:nth-of-type(2)
-      margin-top: 2.21em
-  .img__link:focus .article__img
-    filter: grayscale(0)
+    &:focus
+      filter: grayscale(0)
+  img:first-of-type
+    margin-top: 2.21em
   &-type__p
     margin-bottom: 2em
     color: #b4ad9e
@@ -144,11 +149,10 @@ a
     &:nth-child(2n+1)
       padding-left: 1.5rem
       padding-right: 4rem
-    &__img
+    &-img
       margin-bottom: 2.286em
-    &:nth-of-type(2)
-      img
-        margin-top: 0
+      display: block
+      height: 14rem
     &__h
       display: block
     .article__p
@@ -163,20 +167,18 @@ a
         padding-right: 4rem
       .article__p
         height: calc(1.65em * 7)
-      a
+      a:not(.article-img)
         display: inline-block
-      .img__link
-        display: block
 
 .article:first-child
   padding: 0
   h5,p,img,.article__h
     padding-left: 4rem
     padding-right: 4rem
-  img:first-of-type
+  .article-img:first-child
     margin-bottom: 7.143em
-    padding-left: 0
-    padding-right: 0
+    height: 25.4rem
+    max-width: 100%
 
 .share
   display: flex
@@ -251,8 +253,19 @@ a
       padding-left: 0
     &:last-of-type
       padding-right: 0
-    img
+    .article-img
+      display: block
+      height: 9.1rem
       margin-bottom: 1.714em
+      background-size: cover
+      background-repeat: no-repeat
+      background-position: center
+      filter: grayscale(70%)
+      transition: filter 0.5s
+      &:hover
+        filter: grayscale(0)
+      &:focus
+        filter: grayscale(0)
     .article__h
       font-size: 1.428em
       margin-bottom: 0
@@ -402,7 +415,7 @@ a
 .footer
   background-color: #f0f0f0
   &__div
-    padding: 2.857em 3.5rem 3.214em 4rem
+    padding: 2.857em 3.5rem 3.214em 7.5rem
     display: flex
     justify-content: space-between
     flex-wrap: wrap
@@ -429,6 +442,16 @@ a
   .article__h,.newsletter__h3
     font-size: 1.2rem
 
+  .container:not(.footer__div)
+    padding-left: 0
+    padding-right: 0
+
+  .footer__div
+    padding-left: 4rem
+
+  .comment__textarea
+    padding: 1.5em 1.2rem
+
 
 @media screen and (max-width: 750px)
   .header
@@ -450,7 +473,7 @@ a
         padding: 0 0 7.143em
 
   .article:first-child
-    img:first-of-type
+    .article-img:first-child
       margin-bottom: 5.714em
 
   .you-may-also-like
@@ -482,7 +505,7 @@ a
   .article
     padding: 0 1rem
     &:first-child
-      img:first-of-type
+      .article-img:first-child
         margin-bottom: 3.57em
 
   .articles
@@ -548,6 +571,9 @@ a
     &-userimg__p
       font-size: 1.1rem
 
+  .comment__textarea
+    padding: 1em 0.7rem
+
   .reply-block
     .comment
       &-userimg
@@ -557,4 +583,5 @@ a
         line-height: 24px
       &-userimg__p
         font-size: 0.6rem
-
+      &__textarea
+        padding: 0
