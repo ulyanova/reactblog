@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 export default class Menu extends Component {
     render() {
         return (
-            <div className="header clearfix">
+            <div className="header">
                 <div className="container">
                     <Link to="/" className="logo header__logo">{this.props.brand}</Link>
                     <ul className='menu'>

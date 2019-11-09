@@ -11,7 +11,8 @@ const customStyles = {
         bottom                : 'auto',
         marginRight           : '-50%',
         transform             : 'translate(-50%, -50%)',
-        width                 : '25%'
+        width                 : '100%',
+        maxWidth             : '300px'
     },
     overlay : {
         backgroundColor       : 'rgba(0,0,0,0.2)'
@@ -73,7 +74,7 @@ export default class AuthModal extends Component {
         user ? (user.userpassword === this.state.userpassword ?
                 this.props.dispatch(authoriseUser(user)) :
             this.setState({errormessage: 'Wrong password'})) :
-            this.setState({errormessage: 'User with this name is not registered'});
+            this.setState({errormessage: 'User not registered'});
     }
 
     render()

@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class ArticleFull extends Component {
     render() {
         return <>
-            <img src={this.props.img + '.jpg'} className="article__img"/>
+            <div className="article-img" style={{backgroundImage: 'url('+ this.props.img +')'}}></div>
             <h5 className="article-type__p">{this.props.type}</h5>
             <h3 className="article__h">{this.props.title}</h3>
             { this.props.body.map((item) => (
@@ -11,7 +11,7 @@ export default class ArticleFull extends Component {
             ))}
 
             { this.props.images.map((image) => (
-                <img key={image} src={image} className="article__img"/>
+                <img key={image} src={image} className="article-img"/>
             ))}
 
             { this.props.bodyItalic.map((item) => (

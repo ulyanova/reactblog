@@ -25,7 +25,7 @@ export default class ArticleList extends Component {
             return (
                 <div className="container">
                     <div className="articles">
-                        <h5 className="article-type__p">No articles on this topic</h5>
+                        <h5 className="article-type__p no-articles__h5">No&nbsp;articles on&nbsp;this topic</h5>
                     </div>
                 </div>
             );
