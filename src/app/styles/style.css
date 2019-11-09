@@ -50,11 +50,10 @@ a:focus {
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 3.4rem 3.5rem;
+  padding: 3.4rem 0;
 }
 .header .container {
   flex-direction: row;
-  padding: 0;
 }
 
 .logo {
