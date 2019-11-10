@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://ulyanova.github.io/portfolio-reactblog/",
+  "homepage": "https://ulyanova.github.io/reactblog/",
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack --mode development",
