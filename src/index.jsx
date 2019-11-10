@@ -10,7 +10,7 @@ import "./app/styles/style.css";
 
 ReactDOM.render((
     <Provider store={store}>
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
             <Layout/>
         </Router>
     </Provider>
